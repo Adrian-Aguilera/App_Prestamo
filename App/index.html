@@ -108,30 +108,30 @@
 								<h5>*Información del solicitante</h5>
 								<div class="form-group">
 									<label for="name">ingrese su nombre completo</label>
-									<input type="text" name="name" id="name" class="form-control "
+									<input type="text" name="name" id="name" class="form-control required "
 										onchange="getVals(this, 'name_field');">
 								</div>
 								<div class="form-group">
 									<label for="date">Fecha de nacimiento</label>
-									<input type="date" name="date" id="date" class="form-control "
+									<input type="date" name="date" id="date" class="form-control required"
 										onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label for="text">DUI</label>
 									<input type="text" placeholder="00000000-0" name="dui" id="dui"
-										class="form-control " onchange="getVals(this, 'email_field');">
+										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<br>
 								<h5>*Domicilio en el que reside</h5>
 								<div class="form-group">
 									<label for="text">Direccion</label>
-									<input type="text" placeholder="ingrese dirección" name="email" id="email"
-										class="form-control " onchange="getVals(this, 'email_field');">
+									<input type="text" placeholder="ingrese dirección" name="direccion" id="direccion"
+										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label for="minimum_salary_full_time">Departamento</label>
 									<div class="styled-select">
-										<select class="form-control " id="minimum_salary_full_time"
+										<select class="form-control required" id="minimum_salary_full_time"
 											name="minimum_salary_full_time">
 											<option value="">Seleccione</option>
 											<option value="&lt;10k">&lt;10k</option>
@@ -148,13 +148,13 @@
 								</div>
 								<div class="form-group">
 									<label for="n_telefono">Numero de telefono</label>
-									<input type="text" placeholder="00000000-0" name="n_telefono" id="email"
-										class="form-control " onchange="getVals(this, 'email_field');">
+									<input type="text" placeholder="00000000-0" name="telefono" id="telefono"
+										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label for="mail">Correo electrónico</label>
 									<input type="text" placeholder="0000-000000-000-0" name="mail" id="email"
-										class="form-control " onchange="getVals(this, 'email_field');">
+										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<!--
 								<div class="form-group radio_input">
@@ -172,7 +172,7 @@
 									<div class="fileupload">
 										<input type="file" name="fileupload"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-											class="">
+											class="required">
 									</div>
 								</div>
 							</div>
@@ -188,12 +188,12 @@
 								<div class="form-group">
 									<label for="E_employer">Empleador actual</label>
 									<input type="text" placeholder="ingrese nombre de la empresa" name="E_employer"
-										id="E_employer" class="form-control " onchange="getVals(this, 'email_field');">
+										id="E_employer" class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label for="E_employer_boss">Nombre de su jefe superior inmediato</label>
 									<input type="text" placeholder="ingrese nombre de su jefe" name="E_employer_boss"
-										id="E_employer_boss" class="form-control "
+										id="E_employer_boss" class="form-control required"
 										onchange="getVals(this, 'email_field');">
 								</div>
 
@@ -201,12 +201,12 @@
 								<div class="form-group">
 									<label for="address">Dirección</label>
 									<input type="text" placeholder="ingrese dirección" name="address" id="address"
-										class="form-control " onchange="getVals(this, 'email_field');">
+										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label for="minimum_salary_full_time">Departamento</label>
 									<div class="styled-select">
-										<select class="form-control " id="minimum_salary_full_time"
+										<select class="form-control required" id="minimum_salary_full_time"
 											name="minimum_salary_full_time">
 											<option value="">Seleccione</option>
 											<option value="&lt;10k">&lt;10k</option>
@@ -224,13 +224,13 @@
 								<div class="form-group">
 									<label for="text">Cargo</label>
 									<input type="text" placeholder="ingrese el cargo que desempeña" name="post"
-										id="post" class="form-control " onchange="getVals(this, 'email_field');">
+										id="post" class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div style="display: flex;">
 									<div class="form-group" style="width: 50%; margin-right: 26px;">
 										<label for="minimum_salary_full_time">Departamento</label>
 										<div class="styled-select">
-											<select class="form-control " id="minimum_salary_full_time"
+											<select class="form-control required" id="minimum_salary_full_time"
 												name="minimum_salary_full_time">
 												<option value="">Seleccione</option>
 												<option value="&lt;10k">&lt;10k</option>
@@ -248,7 +248,7 @@
 									<div class="form-group">
 										<label for="text">Ingreso bruto mensual</label>
 										<input type="text" placeholder="$ ingrese monto" name="Ingreso" id="Ingreso"
-											class="form-control " onchange="getVals(this, 'email_field');">
+											class="form-control required" onchange="getVals(this, 'email_field');">
 									</div>
 								</div>
 								<!--<div class="form-group">
@@ -355,17 +355,17 @@
 								<h5>Monto de deudas adquiridas</h5>
 								<div class="form-group">
 									<label for="deuda">Monto total que pagas al mes de otros prestamos o deudas</label>
-									<input type="text" name="deuda" id="deuda" class="form-control "
+									<input type="text" name="deuda" id="deuda" class="form-control required"
 										placeholder="Monto total que pagas al mes de otros prestamos o deudas">
 								</div>
 								<h5>Tiene tarjetas de credito</h5>
 								<div style="display: flex;">
 									<label class="container_radio version_2" style="margin-right: 12px;">Si, tengo
-										<input type="radio" name="experience_1[]" value="yes" class="">
+										<input type="radio" name="experience_1[]" value="yes" class="required">
 										<span class="checkmark"></span>
 									</label>
 									<label class="container_radio version_2">No, tengo
-										<input type="radio" name="experience_1[]" value="no" class="">
+										<input type="radio" name="experience_1[]" value="no" class="required">
 										<span class="checkmark"></span>
 									</label>
 								</div>
@@ -375,7 +375,7 @@
 									<div class="fileupload">
 										<input type="file" name="fileupload"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-											class="">
+											class="required">
 									</div>
 								</div>
 							</div>
@@ -390,18 +390,18 @@
 								<h5>Información del automóvil</h5>
 								<div class="form-group">
 									<label for="marca_title">Marca del Auto</label>
-									<input type="text" name="marca" id="marca" class="form-control "
+									<input type="text" name="marca" id="marca" class="form-control required"
 										placeholder="ingrese marca" onchange="getVals(this, 'name_field');">
 								</div>
 								<div class="form-group">
 									<label>Modelo</label>
 									<!--<label for="modelo">Modelo</label>-->
-									<input type="text" name="modelo" id="modelo" class="form-control "
+									<input type="text" name="modelo" id="modelo" class="form-control required"
 										placeholder="ingrese modelo" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label>Valor de compra del auto, cuanto necesitas prestar?</label>
-									<input type="number" name="valor_compra" id="valor_compra" class="form-control "
+									<input type="number" name="valor_compra" id="valor_compra" class="form-control required"
 										placeholder="$">
 								</div>
 								<div class="form-group add_bottom_30 add_top_20">
@@ -409,7 +409,7 @@
 									<div class="fileupload">
 										<input type="file" name="fileupload"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-											class="">
+											class="required">
 									</div>
 								</div>
 							</div>
@@ -430,7 +430,7 @@
 								<div class="form-group">
 									<label for="minimum_salary_full_time">Relacion</label>
 									<div class="styled-select">
-										<select class="form-control " id="minimum_salary_full_time"
+										<select class="form-control required" id="minimum_salary_full_time"
 											name="minimum_salary_full_time">
 											<option value="">Seleccione una opcion</option>
 											<option value="&lt;10k">&lt;10k</option>
@@ -448,7 +448,7 @@
 								<div class="form-group">
 									<label for="n_telefono">Numero de telefono</label>
 									<input type="text" placeholder="00000000-0" name="referen_numero_telefono"
-										id="email" class="form-control " onchange="getVals(this, 'email_field');">
+										id="email" class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label for="referencia_second_title">Nombre de segunda referencia personal</label>
@@ -459,7 +459,7 @@
 								<div class="form-group">
 									<label for="minimum_salary_full_time">Relacion</label>
 									<div class="styled-select">
-										<select class="form-control " id="minimum_salary_full_time"
+										<select class="form-control required" id="minimum_salary_full_time"
 											name="minimum_salary_full_time">
 											<option value="">Seleccione una opcion</option>
 											<option value="&lt;10k">&lt;10k</option>
@@ -477,7 +477,7 @@
 								<div class="form-group">
 									<label for="n_telefono">Numero de telefono</label>
 									<input type="text" placeholder="00000000-0" name="referen_numero_telefono"
-										id="email" class="form-control " onchange="getVals(this, 'email_field');">
+										id="email" class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 							</div>
 							<!-- </></></></></> Fin de Pagina 5 </></></></></></>-->
