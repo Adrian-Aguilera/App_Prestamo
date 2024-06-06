@@ -180,17 +180,17 @@
 							<div class="step">
 								<h2 class="section_title">Formulario de solicitud</h2>
 								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
-								<br>
 								<h5>Información laboral</h5>
 								<div class="form-group">
 									<label for="E_employer">Empleador actual</label>
-									<input type="text" placeholder="ingrese nombre de la empresa" name="E_employer" id="E_employer"
-										class="form-control " onchange="getVals(this, 'email_field');">
+									<input type="text" placeholder="ingrese nombre de la empresa" name="E_employer"
+										id="E_employer" class="form-control " onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label for="E_employer_boss">Nombre de su jefe superior inmediato</label>
-									<input type="text" placeholder="ingrese nombre de su jefe" name="E_employer_boss" id="E_employer_boss"
-										class="form-control " onchange="getVals(this, 'email_field');">
+									<input type="text" placeholder="ingrese nombre de su jefe" name="E_employer_boss"
+										id="E_employer_boss" class="form-control "
+										onchange="getVals(this, 'email_field');">
 								</div>
 
 								<h5>*Dirección del empleador (Empresa)</h5>
@@ -219,8 +219,8 @@
 								</div>
 								<div class="form-group">
 									<label for="text">Cargo</label>
-									<input type="text" placeholder="ingrese el cargo que desempeña" name="post" id="post"
-										class="form-control " onchange="getVals(this, 'email_field');">
+									<input type="text" placeholder="ingrese el cargo que desempeña" name="post"
+										id="post" class="form-control " onchange="getVals(this, 'email_field');">
 								</div>
 								<div style="display: flex;">
 									<div class="form-group" style="width: 50%; margin-right: 26px;">
@@ -268,75 +268,155 @@
 
 							<!-- /step-->
 
-	                        <div class="step">
-	                            <h2 class="section_title">Bio</h2>
-	                            <h3 class="main_question">Personal info</h3>
-	                            <div class="form-group add_top_30">
-	                                <label for="name">First and Last Name</label>
-	                                <input type="text" name="name" id="name" class="form-control required" onchange="getVals(this, 'name_field');">
-	                            </div>
-	                            <div class="form-group">
-	                                <label for="email">Email Address</label>
-	                                <input type="email" name="email" id="email" class="form-control required" onchange="getVals(this, 'email_field');">
-	                            </div>
-	                            <div class="form-group">
-	                                <label for="phone">Phone</label>
-	                                <input type="text" name="phone" id="phone" class="form-control required">
-	                            </div>
-								<label>Gender</label>
-								<div class="form-group radio_input">
-								    <label class="container_radio me-3">Male
-								        <input type="radio" name="gender" value="Male" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">Female
-								        <input type="radio" name="gender" value="Female" class="required">
-								        <span class="checkmark"></span>
-								    </label>
+							<div class="step">
+								<h2 class="section_title">Formulario de solicitud</h2>
+								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
+								<h5>Información financiera</h5>
+								<label for="">Seleccione los bancos con los que tiene cuenta</label>
+								<div style="
+								display: flex;
+    							flex-wrap: wrap;
+								width: 110%;">
+									<div class="form-group" style="margin-right: 12px;">
+										<label class="container_check version_2 active">Banco Agrícola
+											<input type="checkbox" name="experience_1[]" value="banco_agricola"
+												class="required">
+											<span class="checkmark"></span>
+										</label>
+										<div class="form-group">
+											<label class="container_check version_2 active">Banco Cuscatlán
+												<input type="checkbox" name="experience_1[]" value="banco_cuscatlan"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+										<div class="form-group">
+											<label class="container_check version_2 active">BAC
+												<input type="checkbox" name="experience_1[]" value="banco_BAC"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+									</div>
+									<div class="form-group" style="margin-right: 12px;">
+										<label class="container_check version_2 active">Banco El Salvador
+											<input type="checkbox" name="experience_1[]" value="banco_Salvador"
+												class="required">
+											<span class="checkmark"></span>
+										</label>
+										<div class="form-group">
+											<label class="container_check version_2 active">Banco Davivienda
+												<input type="checkbox" name="experience_1[]" value="banco_davivienda"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+										<div class="form-group">
+											<label class="container_check version_2 active">Banco ABANK
+												<input type="checkbox" name="experience_1[]" value="banco_abank"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2 active">Otros
+											<input type="checkbox" name="experience_1[]" value="otros" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
 								</div>
-	                            <div class="form-group add_bottom_30 add_top_20">
-	                                <label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size: 150KB for demo limit)</small></label>
-	                                <div class="fileupload">
-	                                    <input type="file" name="fileupload" accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="required">
-	                                </div>
+								<h5>Tipos de cuentas que posee</h5>
+								<div style="display: flex;">
+									<div class="form-group" style="margin-right: 12px;">
+										<div class="form-group">
+											<label class="container_check version_2 active">Ahorro
+												<input type="checkbox" name="experience_1[]" value="ahorro" class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+									</div>
+									<div class="form-group" style="margin-right: 12px;">
+										<div class="form-group">
+											<label class="container_check version_2 active">Corriente
+												<input type="checkbox" name="experience_1[]" value="Corriente" class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<h5>Tipos de cuentas que posee</h5>
+	                            <div class="form-group">
+	                                <label for="deuda">Monto total que pagas al mes de otros prestamos o deudas</label>
+	                                <input type="text" name="deuda" id="deuda" class="form-control required" placeholder="Monto total que pagas al mes de otros prestamos o deudas">
 	                            </div>
-	                        </div>
+								<h5>Tipos de cuentas que posee</h5>
+								<div style="display: flex;">
+									<label class="container_radio version_2" style="margin-right: 12px;">Si, tengo
+										<input type="radio" name="experience_1[]" value="yes"
+											class="required">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio version_2">No, tengo
+										<input type="radio" name="experience_1[]" value="no"
+											class="required">
+										<span class="checkmark"></span>
+									</label>
+								</div>
+
+
+								<h5>Subir screenshot de cuenta de últimos 3 meses</h5>
+								<div class="form-group add_bottom_30 add_top_20">
+									<label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size:
+											150KB for demo limit)</small></label>
+									<div class="fileupload">
+										<input type="file" name="fileupload"
+											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+											class="required">
+									</div>
+								</div>
+							</div>
 							<!-- /step-->
 
 							<!-- /Work Availability > Freelance-Contract ============================== -->
-	                        <div class="step">
-	                            <h2 class="section_title">Bio</h2>
-	                            <h3 class="main_question">Personal info</h3>
-	                            <div class="form-group add_top_30">
-	                                <label for="name">First and Last Name</label>
-	                                <input type="text" name="name" id="name" class="form-control required" onchange="getVals(this, 'name_field');">
-	                            </div>
-	                            <div class="form-group">
-	                                <label for="email">Email Address</label>
-	                                <input type="email" name="email" id="email" class="form-control required" onchange="getVals(this, 'email_field');">
-	                            </div>
-	                            <div class="form-group">
-	                                <label for="phone">Phone</label>
-	                                <input type="text" name="phone" id="phone" class="form-control required">
-	                            </div>
+							<div class="step">
+								<h2 class="section_title">Bio</h2>
+								<h3 class="main_question">Personal info</h3>
+								<div class="form-group add_top_30">
+									<label for="name">First and Last Name</label>
+									<input type="text" name="name" id="name" class="form-control required"
+										onchange="getVals(this, 'name_field');">
+								</div>
+								<div class="form-group">
+									<label for="email">Email Address</label>
+									<input type="email" name="email" id="email" class="form-control required"
+										onchange="getVals(this, 'email_field');">
+								</div>
+								<div class="form-group">
+									<label for="phone">Phone</label>
+									<input type="text" name="phone" id="phone" class="form-control required">
+								</div>
 								<label>Gender</label>
 								<div class="form-group radio_input">
-								    <label class="container_radio me-3">Male
-								        <input type="radio" name="gender" value="Male" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">Female
-								        <input type="radio" name="gender" value="Female" class="required">
-								        <span class="checkmark"></span>
-								    </label>
+									<label class="container_radio me-3">Male
+										<input type="radio" name="gender" value="Male" class="required">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio">Female
+										<input type="radio" name="gender" value="Female" class="required">
+										<span class="checkmark"></span>
+									</label>
 								</div>
-	                            <div class="form-group add_bottom_30 add_top_20">
-	                                <label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size: 150KB for demo limit)</small></label>
-	                                <div class="fileupload">
-	                                    <input type="file" name="fileupload" accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="required">
-	                                </div>
-	                            </div>
-	                        </div>
+								<div class="form-group add_bottom_30 add_top_20">
+									<label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size:
+											150KB for demo limit)</small></label>
+									<div class="fileupload">
+										<input type="file" name="fileupload"
+											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+											class="required">
+									</div>
+								</div>
+							</div>
 							<!-- /step-->
 
 							<div class="submit step" id="end">
