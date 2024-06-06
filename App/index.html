@@ -267,6 +267,7 @@
 							<!-- </></></></></> Fin de Pagina 2 </></></></></></>-->
 
 							<!-- /step-->
+							<!-- </></></></></> Inicio de Pagina 3 </></></></></></>-->
 
 							<div class="step">
 								<h2 class="section_title">Formulario de solicitud</h2>
@@ -377,35 +378,61 @@
 								</div>
 							</div>
 							<!-- /step-->
+							<!-- </></></></></> Fin de Pagina 3 </></></></></></>-->
 
-							<!-- /Work Availability > Freelance-Contract ============================== -->
+							<!-- </></></></></> Inicio de Pagina 4 </></></></></></>-->
+
 							<div class="step">
-								<h2 class="section_title">Bio</h2>
-								<h3 class="main_question">Personal info</h3>
-								<div class="form-group add_top_30">
-									<label for="name">First and Last Name</label>
-									<input type="text" name="name" id="name" class="form-control required"
+								<h2 class="section_title">Formulario de solicitud</h2>
+								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
+								<h5>Información del automóvil</h5>
+								<div class="form-group">
+									<label for="marca_title">Marca del Auto</label>
+									<input type="text" name="marca" id="marca" class="form-control " placeholder="ingrese marca"
 										onchange="getVals(this, 'name_field');">
 								</div>
 								<div class="form-group">
-									<label for="email">Email Address</label>
-									<input type="email" name="email" id="email" class="form-control required"
+									<label>Modelo</label>
+									<!--<label for="modelo">Modelo</label>-->
+									<input type="text" name="modelo" id="modelo" class="form-control " placeholder="ingrese modelo"
 										onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
-									<label for="phone">Phone</label>
-									<input type="text" name="phone" id="phone" class="form-control required">
+									<label >Valor de compra del auto, cuanto necesitas prestar?</label>
+									<input type="number" name="valor_compra" id="valor_compra" class="form-control " placeholder="$">
 								</div>
-								<label>Gender</label>
-								<div class="form-group radio_input">
-									<label class="container_radio me-3">Male
-										<input type="radio" name="gender" value="Male" class="required">
-										<span class="checkmark"></span>
-									</label>
-									<label class="container_radio">Female
-										<input type="radio" name="gender" value="Female" class="required">
-										<span class="checkmark"></span>
-									</label>
+								<div class="form-group add_bottom_30 add_top_20">
+									<label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size:
+											150KB for demo limit)</small></label>
+									<div class="fileupload">
+										<input type="file" name="fileupload"
+											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+											class="">
+									</div>
+								</div>
+							</div>
+							<!-- /step-->
+							<!-- </></></></></> Fin de Pagina 4 </></></></></></>-->
+
+							<!-- </></></></></> Inicio de Pagina 5 </></></></></></>-->
+							<div class="step">
+								<h2 class="section_title">Formulario de solicitud</h2>
+								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
+								<h5>Referencias personales</h5>
+								<div class="form-group">
+									<label for="marca_title">Marca del Auto</label>
+									<input type="text" name="marca" id="marca" class="form-control required" placeholder="ingrese marca"
+										onchange="getVals(this, 'name_field');">
+								</div>
+								<div class="form-group">
+									<label>Modelo</label>
+									<!--<label for="modelo">Modelo</label>-->
+									<input type="text" name="modelo" id="modelo" class="form-control required" placeholder="ingrese modelo"
+										onchange="getVals(this, 'email_field');">
+								</div>
+								<div class="form-group">
+									<label >Valor de compra del auto, cuanto necesitas prestar?</label>
+									<input type="number" name="valor_compra" id="valor_compra" class="form-control required" placeholder="$">
 								</div>
 								<div class="form-group add_bottom_30 add_top_20">
 									<label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size:
@@ -417,7 +444,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /step-->
+							<!-- </></></></></> Fin de Pagina 5 </></></></></></>-->
 
 							<div class="submit step" id="end">
 								<div class="summary">
