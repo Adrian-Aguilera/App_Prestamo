@@ -31,6 +31,11 @@
 
 	<!-- MODERNIZR MENU -->
 	<script src="js/modernizr.js"></script>
+	<style>
+		.left-class {
+			text-align: left;
+		}
+	</style>
 
 </head>
 
@@ -163,8 +168,7 @@
 								    </label>
 								</div>-->
 								<div class="form-group add_bottom_30 add_top_20">
-									<label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size:
-											150KB for demo limit)</small></label>
+									<label>Recibo de Luz o Agua<br></label>
 									<div class="fileupload">
 										<input type="file" name="fileupload"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -332,7 +336,8 @@
 									<div class="form-group" style="margin-right: 12px;">
 										<div class="form-group">
 											<label class="container_check version_2 active">Ahorro
-												<input type="checkbox" name="experience_1[]" value="ahorro" class="required">
+												<input type="checkbox" name="experience_1[]" value="ahorro"
+													class="required">
 												<span class="checkmark"></span>
 											</label>
 										</div>
@@ -340,36 +345,33 @@
 									<div class="form-group" style="margin-right: 12px;">
 										<div class="form-group">
 											<label class="container_check version_2 active">Corriente
-												<input type="checkbox" name="experience_1[]" value="Corriente" class="required">
+												<input type="checkbox" name="experience_1[]" value="Corriente"
+													class="required">
 												<span class="checkmark"></span>
 											</label>
 										</div>
 									</div>
 								</div>
-								<h5>Tipos de cuentas que posee</h5>
-	                            <div class="form-group">
-	                                <label for="deuda">Monto total que pagas al mes de otros prestamos o deudas</label>
-	                                <input type="text" name="deuda" id="deuda" class="form-control " placeholder="Monto total que pagas al mes de otros prestamos o deudas">
-	                            </div>
-								<h5>Tipos de cuentas que posee</h5>
+								<h5>Monto de deudas adquiridas</h5>
+								<div class="form-group">
+									<label for="deuda">Monto total que pagas al mes de otros prestamos o deudas</label>
+									<input type="text" name="deuda" id="deuda" class="form-control "
+										placeholder="Monto total que pagas al mes de otros prestamos o deudas">
+								</div>
+								<h5>Tiene tarjetas de credito</h5>
 								<div style="display: flex;">
 									<label class="container_radio version_2" style="margin-right: 12px;">Si, tengo
-										<input type="radio" name="experience_1[]" value="yes"
-											class="">
+										<input type="radio" name="experience_1[]" value="yes" class="">
 										<span class="checkmark"></span>
 									</label>
 									<label class="container_radio version_2">No, tengo
-										<input type="radio" name="experience_1[]" value="no"
-											class="">
+										<input type="radio" name="experience_1[]" value="no" class="">
 										<span class="checkmark"></span>
 									</label>
 								</div>
 
-
-								<h5>Subir screenshot de cuenta de últimos 3 meses</h5>
 								<div class="form-group add_bottom_30 add_top_20">
-									<label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size:
-											150KB for demo limit)</small></label>
+									<label>Subir screenshot de cuenta de últimos 3 meses<br></label>
 									<div class="fileupload">
 										<input type="file" name="fileupload"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -388,22 +390,22 @@
 								<h5>Información del automóvil</h5>
 								<div class="form-group">
 									<label for="marca_title">Marca del Auto</label>
-									<input type="text" name="marca" id="marca" class="form-control " placeholder="ingrese marca"
-										onchange="getVals(this, 'name_field');">
+									<input type="text" name="marca" id="marca" class="form-control "
+										placeholder="ingrese marca" onchange="getVals(this, 'name_field');">
 								</div>
 								<div class="form-group">
 									<label>Modelo</label>
 									<!--<label for="modelo">Modelo</label>-->
-									<input type="text" name="modelo" id="modelo" class="form-control " placeholder="ingrese modelo"
-										onchange="getVals(this, 'email_field');">
+									<input type="text" name="modelo" id="modelo" class="form-control "
+										placeholder="ingrese modelo" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
-									<label >Valor de compra del auto, cuanto necesitas prestar?</label>
-									<input type="number" name="valor_compra" id="valor_compra" class="form-control " placeholder="$">
+									<label>Valor de compra del auto, cuanto necesitas prestar?</label>
+									<input type="number" name="valor_compra" id="valor_compra" class="form-control "
+										placeholder="$">
 								</div>
 								<div class="form-group add_bottom_30 add_top_20">
-									<label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size:
-											150KB for demo limit)</small></label>
+									<label>Fotografía del Auto que quieres comprar:</label>
 									<div class="fileupload">
 										<input type="file" name="fileupload"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -420,47 +422,89 @@
 								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
 								<h5>Referencias personales</h5>
 								<div class="form-group">
-									<label for="marca_title">Marca del Auto</label>
-									<input type="text" name="marca" id="marca" class="form-control required" placeholder="ingrese marca"
+									<label for="referencia_title">Nombre de primera referencia personal</label>
+									<input type="text" name="referencia_first" id="referencia_first"
+										class="form-control required" placeholder="Ingrese nombre"
 										onchange="getVals(this, 'name_field');">
 								</div>
 								<div class="form-group">
-									<label>Modelo</label>
-									<!--<label for="modelo">Modelo</label>-->
-									<input type="text" name="modelo" id="modelo" class="form-control required" placeholder="ingrese modelo"
-										onchange="getVals(this, 'email_field');">
+									<label for="minimum_salary_full_time">Relacion</label>
+									<div class="styled-select">
+										<select class="form-control " id="minimum_salary_full_time"
+											name="minimum_salary_full_time">
+											<option value="">Seleccione una opcion</option>
+											<option value="&lt;10k">&lt;10k</option>
+											<option value="10-15k">10-15k</option>
+											<option value="15-20k">15-20k</option>
+											<option value="20-25k">20-25k</option>
+											<option value="25-30k">25-30k</option>
+											<option value="30-35k">30-35k</option>
+											<option value="35-40k">35-40k</option>
+											<option value="45-50k">45-50k</option>
+											<option value="&gt;50k">&gt;50k</option>
+										</select>
+									</div>
 								</div>
 								<div class="form-group">
-									<label >Valor de compra del auto, cuanto necesitas prestar?</label>
-									<input type="number" name="valor_compra" id="valor_compra" class="form-control required" placeholder="$">
+									<label for="n_telefono">Numero de telefono</label>
+									<input type="text" placeholder="00000000-0" name="referen_numero_telefono"
+										id="email" class="form-control " onchange="getVals(this, 'email_field');">
 								</div>
-								<div class="form-group add_bottom_30 add_top_20">
-									<label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size:
-											150KB for demo limit)</small></label>
-									<div class="fileupload">
-										<input type="file" name="fileupload"
-											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-											class="required">
+								<div class="form-group">
+									<label for="referencia_second_title">Nombre de segunda referencia personal</label>
+									<input type="text" name="referencia_second" id="referencia_second"
+										class="form-control required" placeholder="Ingrese nombre"
+										onchange="getVals(this, 'name_field');">
+								</div>
+								<div class="form-group">
+									<label for="minimum_salary_full_time">Relacion</label>
+									<div class="styled-select">
+										<select class="form-control " id="minimum_salary_full_time"
+											name="minimum_salary_full_time">
+											<option value="">Seleccione una opcion</option>
+											<option value="&lt;10k">&lt;10k</option>
+											<option value="10-15k">10-15k</option>
+											<option value="15-20k">15-20k</option>
+											<option value="20-25k">20-25k</option>
+											<option value="25-30k">25-30k</option>
+											<option value="30-35k">30-35k</option>
+											<option value="35-40k">35-40k</option>
+											<option value="45-50k">45-50k</option>
+											<option value="&gt;50k">&gt;50k</option>
+										</select>
 									</div>
+								</div>
+								<div class="form-group">
+									<label for="n_telefono">Numero de telefono</label>
+									<input type="text" placeholder="00000000-0" name="referen_numero_telefono"
+										id="email" class="form-control " onchange="getVals(this, 'email_field');">
 								</div>
 							</div>
 							<!-- </></></></></> Fin de Pagina 5 </></></></></></>-->
 
 							<div class="submit step" id="end">
 								<div class="summary">
-									<div class="wrapper">
-										<h3>Thank your for your time<br><span id="name_field"></span>!</h3>
-										<p>We will contat you shorly at the following email address <strong
-												id="email_field"></strong></p>
+									<div class="wrapper" style="    padding: 60px 0px !important;">
+										<!--<h3>Thank your for your time<br><span id="name_field"></span>!</h3>-->
+										<h2 class="section_title left-class">Formulario de solicitud</h2>
+										<h3 class="main_question left-class">Por favor rellene todos los datos
+											solicitados</h3>
+										<h5 class="left-class">Autorización y Acuerdo:</h5>
+										<p class="left-class">Certifico que la información proporcionada en esta
+											solicitud es verdadera y correcta. Autorizo al prestamista a verificar la
+											información proporcionada, incluyendo la realización de una verificación de
+											crédito. Entiendo que cualquier declaración falsa puede resultar en el
+											rechazo de mi solicitud. <strong id="email_field"></strong></p>
 									</div>
 									<div class="text-center">
-										<div class="form-group terms">
-											<label class="container_check">Please accept our <a href="#"
-													data-bs-toggle="modal" data-bs-target="#terms-txt">Terms and
-													conditions</a> before Submit
-												<input type="checkbox" name="terms" value="Yes" class="required">
-												<span class="checkmark"></span>
-											</label>
+										<div class="form-group terms" style="    background-color: #fff;">
+											<div style="justify-content: center; display: flex;">
+												<label class="container_check">Acepto *<a href="#"
+														data-bs-toggle="modal" data-bs-target="#terms-txt"></a>
+													<input type="checkbox" name="terms" value="Yes" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -472,7 +516,7 @@
 						<div id="bottom-wizard">
 							<button type="button" name="backward" class="backward">Atras</button>
 							<button type="button" name="forward" class="forward">Siguiente</button>
-							<button type="submit" name="process" class="submit">Submit</button>
+							<button type="submit" name="process" class="submit">Finalizar</button>
 						</div>
 						<!-- /bottom-wizard -->
 					</form>
