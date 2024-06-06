@@ -1166,7 +1166,6 @@ span.error:after {
   font-size: 14px;
   font-size: 0.875rem;
   height: calc(2.65rem + 2px);
-  margin-right: 10px;
 }
 .form-control:focus {
   box-shadow: none;
