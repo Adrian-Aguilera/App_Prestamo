@@ -54,7 +54,8 @@
 			<li><a href="index.html" class="animated_link">Version 1</a></li>
 			<li><a href="index-2.html" class="animated_link">Version 2</a></li>
 			<li><a href="index-3.html" class="animated_link">Version 3</a></li>
-			<li><a href="index-4.html" class="animated_link">File Attachment demo</a></li>
+			<li><a href="index-4.html" class="animated_link">File Attachment
+					demo</a></li>
 			<li><a href="about.html" class="animated_link">About Us</a></li>
 			<li><a href="contacts.html" class="animated_link">Contact Us</a></li>
 			<li><a href="#0" class="animated_link">Purchase Template</a></li>
@@ -66,10 +67,22 @@
 		<div class="row row-height">
 			<div class="col-xl-4 col-lg-4 content-left">
 				<div class="content-left-wrapper" style="background-color: #20C997 !important;">
-					<a href="index.html" id="logo"><img src="img/logo.png" alt="" width="45" height="45"></a>
-					<div>
-						<figure><img src="img/info_graphic_1.svg" alt="" class="img-fluid" width="270" height="270">
-						</figure>
+					<a href="index.html" id="logo"><img src="img/main-logo.svg" alt width="45" height="45"></a>
+					<div style="display: flex;">
+						<div>
+							<img src="img/puntos.svg" alt class="img-fluid" width="270" height="270" 
+							style="
+								position: relative;
+								top: -18rem;
+								left: -60px;
+							">
+						</div>
+						<div>
+							<img src="img/main-img.svg" alt class="img-fluid" width="270" height="270">
+						</div>
+						<div>
+							<img src="img/puntos.svg" alt class="img-fluid" width="270" height="270">
+						</div>
 					</div>
 					<div class="copy">© 2024 Fast Track</div>
 				</div>
@@ -85,12 +98,13 @@
 					<!-- /top-wizard -->
 					<!-- </></></></></> Pagina 1 </></></></></></>-->
 					<form id="wrapped" method="post" enctype="multipart/form-data">
-						<input id="website" name="website" type="text" value="">
+						<input id="website" name="website" type="text" value>
 						<!-- Leave for security protection, read docs for details -->
 						<div id="middle-wizard">
 							<div class="step">
 								<h2 class="section_title">Formulario de solicitud</h2>
-								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
+								<h3 class="main_question">Por favor rellene todos los datos
+									solicitados</h3>
 								<h5>*Información del solicitante</h5>
 								<div class="form-group">
 									<label for="name">ingrese su nombre completo</label>
@@ -119,7 +133,7 @@
 									<div class="styled-select">
 										<select class="form-control required" id="minimum_salary_full_time"
 											name="minimum_salary_full_time">
-											<option value="">Seleccione</option>
+											<option value>Seleccione</option>
 											<option value="&lt;10k">&lt;10k</option>
 											<option value="10-15k">10-15k</option>
 											<option value="15-20k">15-20k</option>
@@ -165,19 +179,21 @@
 							<!-- /step-->
 							<!-- </></></></></> fin de Pagina 1 </></></></></></>-->
 
-
 							<!-- </></></></></> Inicio de Pagina 2 </></></></></></>-->
 							<div class="step">
 								<h2 class="section_title">Formulario de solicitud</h2>
-								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
+								<h3 class="main_question">Por favor rellene todos los datos
+									solicitados</h3>
 								<h5>Información laboral</h5>
 								<div class="form-group">
 									<label for="E_employer">Empleador actual</label>
 									<input type="text" placeholder="ingrese nombre de la empresa" name="E_employer"
-										id="E_employer" class="form-control required" onchange="getVals(this, 'email_field');">
+										id="E_employer" class="form-control required"
+										onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
-									<label for="E_employer_boss">Nombre de su jefe superior inmediato</label>
+									<label for="E_employer_boss">Nombre de su jefe superior
+										inmediato</label>
 									<input type="text" placeholder="ingrese nombre de su jefe" name="E_employer_boss"
 										id="E_employer_boss" class="form-control required"
 										onchange="getVals(this, 'email_field');">
@@ -194,7 +210,7 @@
 									<div class="styled-select">
 										<select class="form-control required" id="minimum_salary_full_time"
 											name="minimum_salary_full_time">
-											<option value="">Seleccione</option>
+											<option value>Seleccione</option>
 											<option value="&lt;10k">&lt;10k</option>
 											<option value="10-15k">10-15k</option>
 											<option value="15-20k">15-20k</option>
@@ -210,7 +226,8 @@
 								<div class="form-group">
 									<label for="text">Cargo</label>
 									<input type="text" placeholder="ingrese el cargo que desempeña" name="post"
-										id="post" class="form-control required" onchange="getVals(this, 'email_field');">
+										id="post" class="form-control required"
+										onchange="getVals(this, 'email_field');">
 								</div>
 								<div style="display: flex;">
 									<div class="form-group" style="width: 50%; margin-right: 26px;">
@@ -218,7 +235,7 @@
 										<div class="styled-select">
 											<select class="form-control required" id="minimum_salary_full_time"
 												name="minimum_salary_full_time">
-												<option value="">Seleccione</option>
+												<option value>Seleccione</option>
 												<option value="&lt;10k">&lt;10k</option>
 												<option value="10-15k">10-15k</option>
 												<option value="15-20k">15-20k</option>
@@ -261,9 +278,10 @@
 
 							<div class="step">
 								<h2 class="section_title">Formulario de solicitud</h2>
-								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
+								<h3 class="main_question">Por favor rellene todos los datos
+									solicitados</h3>
 								<h5>Información financiera</h5>
-								<label for="">Seleccione los bancos con los que tiene cuenta</label>
+								<label for>Seleccione los bancos con los que tiene cuenta</label>
 								<div style="
 								display: flex;
     							flex-wrap: wrap;
@@ -340,7 +358,8 @@
 								</div>
 								<h5>Monto de deudas adquiridas</h5>
 								<div class="form-group">
-									<label for="deuda">Monto total que pagas al mes de otros prestamos o deudas</label>
+									<label for="deuda">Monto total que pagas al mes de otros prestamos o
+										deudas</label>
 									<input type="text" name="deuda" id="deuda" class="form-control required"
 										placeholder="Monto total que pagas al mes de otros prestamos o deudas">
 								</div>
@@ -372,7 +391,8 @@
 
 							<div class="step">
 								<h2 class="section_title">Formulario de solicitud</h2>
-								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
+								<h3 class="main_question">Por favor rellene todos los datos
+									solicitados</h3>
 								<h5>Información del automóvil</h5>
 								<div class="form-group">
 									<label for="marca_title">Marca del Auto</label>
@@ -387,8 +407,8 @@
 								</div>
 								<div class="form-group">
 									<label>Valor de compra del auto, cuanto necesitas prestar?</label>
-									<input type="number" name="valor_compra" id="valor_compra" class="form-control required"
-										placeholder="$">
+									<input type="number" name="valor_compra" id="valor_compra"
+										class="form-control required" placeholder="$">
 								</div>
 								<div class="form-group add_bottom_30 add_top_20">
 									<label>Fotografía del Auto que quieres comprar:</label>
@@ -405,10 +425,12 @@
 							<!-- </></></></></> Inicio de Pagina 5 </></></></></></>-->
 							<div class="step">
 								<h2 class="section_title">Formulario de solicitud</h2>
-								<h3 class="main_question">Por favor rellene todos los datos solicitados</h3>
+								<h3 class="main_question">Por favor rellene todos los datos
+									solicitados</h3>
 								<h5>Referencias personales</h5>
 								<div class="form-group">
-									<label for="referencia_title">Nombre de primera referencia personal</label>
+									<label for="referencia_title">Nombre de primera referencia
+										personal</label>
 									<input type="text" name="referencia_first" id="referencia_first"
 										class="form-control required" placeholder="Ingrese nombre"
 										onchange="getVals(this, 'name_field');">
@@ -418,7 +440,7 @@
 									<div class="styled-select">
 										<select class="form-control required" id="minimum_salary_full_time"
 											name="minimum_salary_full_time">
-											<option value="">Seleccione una opcion</option>
+											<option value>Seleccione una opcion</option>
 											<option value="&lt;10k">&lt;10k</option>
 											<option value="10-15k">10-15k</option>
 											<option value="15-20k">15-20k</option>
@@ -434,10 +456,12 @@
 								<div class="form-group">
 									<label for="n_telefono">Numero de telefono</label>
 									<input type="text" placeholder="00000000-0" name="referen_numero_telefono"
-										id="email" class="form-control required" onchange="getVals(this, 'email_field');">
+										id="email" class="form-control required"
+										onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
-									<label for="referencia_second_title">Nombre de segunda referencia personal</label>
+									<label for="referencia_second_title">Nombre de segunda referencia
+										personal</label>
 									<input type="text" name="referencia_second" id="referencia_second"
 										class="form-control required" placeholder="Ingrese nombre"
 										onchange="getVals(this, 'name_field');">
@@ -447,7 +471,7 @@
 									<div class="styled-select">
 										<select class="form-control required" id="minimum_salary_full_time"
 											name="minimum_salary_full_time">
-											<option value="">Seleccione una opcion</option>
+											<option value>Seleccione una opcion</option>
 											<option value="&lt;10k">&lt;10k</option>
 											<option value="10-15k">10-15k</option>
 											<option value="15-20k">15-20k</option>
@@ -463,7 +487,8 @@
 								<div class="form-group">
 									<label for="n_telefono">Numero de telefono</label>
 									<input type="text" placeholder="00000000-0" name="referen_numero_telefono"
-										id="email" class="form-control required" onchange="getVals(this, 'email_field');">
+										id="email" class="form-control required"
+										onchange="getVals(this, 'email_field');">
 								</div>
 							</div>
 							<!-- </></></></></> Fin de Pagina 5 </></></></></></>-->
@@ -473,13 +498,18 @@
 									<div class="wrapper" style="    padding: 60px 0px !important;">
 										<!--<h3>Thank your for your time<br><span id="name_field"></span>!</h3>-->
 										<h2 class="section_title left-class">Formulario de solicitud</h2>
-										<h3 class="main_question left-class">Por favor rellene todos los datos
+										<h3 class="main_question left-class">Por favor rellene todos los
+											datos
 											solicitados</h3>
 										<h5 class="left-class">Autorización y Acuerdo:</h5>
-										<p class="left-class">Certifico que la información proporcionada en esta
-											solicitud es verdadera y correcta. Autorizo al prestamista a verificar la
-											información proporcionada, incluyendo la realización de una verificación de
-											crédito. Entiendo que cualquier declaración falsa puede resultar en el
+										<p class="left-class">Certifico que la información proporcionada en
+											esta
+											solicitud es verdadera y correcta. Autorizo al prestamista a
+											verificar la
+											información proporcionada, incluyendo la realización de una
+											verificación de
+											crédito. Entiendo que cualquier declaración falsa puede resultar en
+											el
 											rechazo de mi solicitud. <strong id="email_field"></strong></p>
 									</div>
 									<div class="text-center">
@@ -501,7 +531,8 @@
 						<!-- /middle-wizard -->
 						<div id="bottom-wizard">
 							<button type="button" name="backward" class="backward">Atras</button>
-							<button type="button" name="forward" class="forward" style="background: #00838F;">Siguiente</button>
+							<button type="button" name="forward" class="forward"
+								style="background: #00838F;">Siguiente</button>
 							<button type="submit" name="process" class="submit">Finalizar</button>
 						</div>
 						<!-- /bottom-wizard -->
@@ -537,16 +568,24 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>,
-						mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus,
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod
+							novum accumsan</strong>,
+						mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex
+						prompta alterum sanctus,
 						pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam
-						dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt
-						sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum
-						accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum
+						accumsan, mei ludus tamquam
+						dolores id. No sit debitis meliore postulant, per ex prompta alterum
+						sanctus, pro ne quod dicunt
+						sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius
+							qui</strong>, in nec quod novum
+						accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant,
+						per ex prompta alterum
 						sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam
-						dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum
+						accumsan, mei ludus tamquam
+						dolores id. No sit debitis meliore postulant, per ex prompta alterum
+						sanctus, pro ne quod dicunt
 						sensibus.</p>
 				</div>
 				<div class="modal-footer">
