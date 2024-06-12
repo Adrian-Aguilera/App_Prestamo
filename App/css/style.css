@@ -1411,7 +1411,7 @@ input[type=file]::-webkit-file-upload-button, input[type=file].invalid::-webkit-
   border-radius: 3px;
   padding: 8px 10px 8px 38px;
   font-weight: 600;
-  background: #1dbe72 url(../img/upload_icon.svg) 8px center no-repeat;
+  background: #00838F url(../img/upload_icon.svg) 8px center no-repeat;
   outline: none;
 }
 input[type=file]::-webkit-file-upload-button:focus, input[type=file].invalid::-webkit-file-upload-button:focus, input[type=file].valid::-webkit-file-upload-button:focus {
