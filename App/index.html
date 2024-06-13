@@ -152,7 +152,7 @@
 										onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
-									<label for="text">DUI</label>
+									<label for="text">DUI sin guiones</label>
 									<input type="text" placeholder="00000000-0" name="dui" id="dui"
 										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
@@ -274,22 +274,10 @@
 								</div>
 								<div style="display: flex;">
 									<div class="form-group" style="width: 50%; margin-right: 26px;">
-										<label for="minimum_salary_full_time">Años de antiguedad</label>
-										<div class="styled-select">
-											<select class="form-control required" id="minimum_salary_full_time"
-												name="minimum_salary_full_time">
-												<option value>Seleccione</option>
-												<option value="&lt;10k">&lt;10k</option>
-												<option value="10-15k">10-15k</option>
-												<option value="15-20k">15-20k</option>
-												<option value="20-25k">20-25k</option>
-												<option value="25-30k">25-30k</option>
-												<option value="30-35k">30-35k</option>
-												<option value="35-40k">35-40k</option>
-												<option value="45-50k">45-50k</option>
-												<option value="&gt;50k">&gt;50k</option>
-											</select>
-										</div>
+										<label for="text">Años de antiguedad</label>
+										<input type="text" placeholder="ingrese años de antiguedad" name="antiguedad"
+											id="post" class="form-control required"
+											onchange="getVals(this, 'antiguedad');">
 									</div>
 									<div class="form-group">
 										<label for="text">Ingreso bruto mensual</label>
@@ -320,9 +308,6 @@
 							<!-- </></></></></> Inicio de Pagina 3 </></></></></></>-->
 
 							<div class="step">
-								<h2 class="section_title">Formulario de solicitud</h2>
-								<h3 class="main_question">Por favor rellene todos los datos
-									solicitados</h3>
 								<h5>Información financiera</h5>
 								<label for>Seleccione los bancos con los que tiene cuenta</label>
 								<div style="
@@ -451,7 +436,7 @@
 								</div>
 								<div class="form-group">
 									<label>Valor de compra del auto, cuanto necesitas prestar?</label>
-									<input type="number" name="valor_compra" id="valor_compra"
+									<input type="text" name="valor_compra" id="valor_compra"
 										class="form-control required" placeholder="$">
 								</div>
 								<div class="form-group add_bottom_30 add_top_20">
@@ -485,15 +470,8 @@
 										<select class="form-control required" id="minimum_salary_full_time"
 											name="minimum_salary_full_time">
 											<option value>Seleccione una opcion</option>
-											<option value="&lt;10k">&lt;10k</option>
-											<option value="10-15k">10-15k</option>
-											<option value="15-20k">15-20k</option>
-											<option value="20-25k">20-25k</option>
-											<option value="25-30k">25-30k</option>
-											<option value="30-35k">30-35k</option>
-											<option value="35-40k">35-40k</option>
-											<option value="45-50k">45-50k</option>
-											<option value="&gt;50k">&gt;50k</option>
+											<option value="familiar">familiar </option>
+											<option value="amistad">amistad</option>
 										</select>
 									</div>
 								</div>
