@@ -116,8 +116,8 @@
         function (value, element, params) {
 
             var files,
-                unit = params.unit || "KB",
-                size = params.size || 100,
+                unit = params.unit || "MB",
+                size = params.size || 150,
                 min_file_size = fileSizeToBytes(size, unit),
                 is_valid = false;
 
@@ -168,7 +168,7 @@
         function (value, element, params) {
 
             var files,
-                unit = params.unit || "KB",
+                unit = params.unit || "MB",
                 size = params.size || 100,
                 max_file_size = fileSizeToBytes(size, unit),
                 is_valid = false;
@@ -196,8 +196,8 @@
         },
         function (params, element) {
             return formatter(
-                "File cannot be larger than {0}{1}.",
-                [params.size || 100, params.unit || "KB"]
+                "El archivo no puede tener más de {0}{1}.",
+                [params.size || 150, params.unit || "KB"]
             );
         }
     );

@@ -61,8 +61,8 @@ $("form#wrapped")
                     types: ["pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
                 },
                 maxFileSize: {
-                    "unit": "KB",
-                    "size": 150
+                    "unit": "MB",
+                    "size": 5
                 },
                 minFileSize: {
                     "unit": "KB",
