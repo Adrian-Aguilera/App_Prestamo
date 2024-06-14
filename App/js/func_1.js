@@ -16,14 +16,80 @@ jQuery(function($) {
             if ($('input#website').val().length != 0) {
                 return false;
             }
-            if (!state.isMovingForward)
+            if (!state.isMovingForward) {
                 return true;
-            var inputs = $(this).wizard('state').step.find(':input');
-            return !inputs.length || !!inputs.valid();
+            }
+            var currentStep = $(this).wizard('state').step;
+            var inputs = currentStep.find(':input');
+            var valid = true; // asume que todo es válido inicialmente
+    
+            if (currentStep.find('#dui').length > 0) {
+                var duiValue = $('#dui').val();
+                var regexDUI = /^\d{9}$/;
+                if (!regexDUI.test(duiValue)) {
+                    $('#dui').addClass('is-invalid');
+                    valid = false;
+
+                    
+                } else {
+                    $('#dui').removeClass('is-invalid');
+                }
+            }
+
+            //validiacion para el telefono
+            if (currentStep.find('#telefono').length > 0) {
+                var duiValue = $('#telefono').val();
+                var regexTelefono = /^\d{8}$/;
+                if (!regexTelefono.test(duiValue)) {
+                    $('#telefono').addClass('is-invalid');
+                    valid = false;
+
+                    
+                } else {
+                    $('#telefono').removeClass('is-invalid');
+                }
+            }
+            //vallidacion para años de antiguedad
+            if (currentStep.find('#antiguedad').length > 0) {
+                var antiguedadValue = $('#antiguedad').val();
+                var regexAntiguedad = /^\d+$/;
+                if (!regexAntiguedad.test(antiguedadValue)) {
+                    $('#antiguedad').addClass('is-invalid');
+                    valid = false;
+                    
+                } else {
+                    $('#antiguedad').removeClass('is-invalid');
+                }
+            }
+
+                //vallidacion para años de Ingreso
+            if (currentStep.find('#Ingreso').length > 0) {
+                var IngresoiValue = $('#Ingreso').val();
+                var regexIngreso = /^\d+$/;
+                if (!regexIngreso.test(IngresoiValue)) {
+                    $('#Ingreso').addClass('is-invalid');
+                    valid = false;
+
+                    
+                } else {
+                    $('#Ingreso').removeClass('is-invalid');
+                }
+            }
+            if (currentStep.find('#valor_compra').length > 0) {
+                var ValorValue = $('#valor_compra').val();
+                var regexValor = /^\d+$/;
+                if (!regexValor.test(ValorValue)) {
+                    $('#valor_compra').addClass('is-invalid');
+                    valid = false;
+                } else {
+                    $('#valor_compra').removeClass('is-invalid');
+                }
+            }
+            return valid && (!inputs.length || !!inputs.valid());
         }
     }).validate({
         errorPlacement: function(error, element) {
-            if (element.is(':radio') || element.is(':checkbox')){
+            if (element.is(':radio') || element.is(':checkbox')) {
                 error.insertBefore(element.next());
             } else {
                 error.insertAfter(element);
@@ -58,7 +124,13 @@ $("form#wrapped")
         rules: {
             fileupload: {
                 fileType: {
-                    types: ["pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
+                    types: [
+                        "pdf", 
+                        "application/msword", 
+                        "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
+                        "image/jpeg",
+                        "image/jpg"
+                    ]
                 },
                 maxFileSize: {
                     "unit": "MB",

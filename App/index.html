@@ -51,10 +51,6 @@
 			width: 27rem;
 			margin-top: 13%;
 		}
-		.is-invalid {
-			border-color: red;
-			background-color: #ffe6e6;
-		}
 		@media (max-width:740px ) {
 			.img-main-1 {
 				width: 16rem;
@@ -164,7 +160,7 @@
 								<div class="form-group">
 									<label for="text">DUI sin guiones</label>	
 									<input type="text" placeholder="00000000-0" name="dui" id="dui"
-										class="form-control required" onchange="validarDUI(this.value)">
+										class="form-control required" onchange="getVals(this, 'dui');">
 								</div>
 								<br>
 								<h5>*Domicilio en el que reside</h5>
@@ -278,21 +274,21 @@
 								</div>
 								<div class="form-group">
 									<label for="text">Cargo</label>
-									<input type="text" placeholder="ingrese el cargo que desempeña" name="post"
-										id="post" class="form-control required"
-										onchange="getVals(this, 'email_field');">
+									<input type="text" placeholder="ingrese el cargo que desempeña" name="cargo"
+										id="cargo" class="form-control required"
+										onchange="getVals(this, 'cargo');">
 								</div>
 								<div style="display: flex;">
 									<div class="form-group" style="width: 50%; margin-right: 26px;">
 										<label for="text">Años de antiguedad</label>
 										<input type="text" placeholder="ingrese años de antiguedad" name="antiguedad"
-											id="post" class="form-control required"
+											id="antiguedad" class="form-control required"
 											onchange="getVals(this, 'antiguedad');">
 									</div>
 									<div class="form-group">
 										<label for="text">Ingreso bruto mensual</label>
 										<input type="text" placeholder="$ ingrese monto" name="Ingreso" id="Ingreso"
-											class="form-control required" onchange="getVals(this, 'email_field');">
+											class="form-control required" onchange="getVals(this, 'Ingreso');">
 									</div>
 								</div>
 								<!--<div class="form-group">
@@ -378,7 +374,7 @@
 									<div class="form-group" style="margin-right: 12px;">
 										<div class="form-group">
 											<label class="container_check version_2 active">Ahorro
-												<input type="checkbox" name="experience_1[]" value="ahorro"
+												<input type="checkbox" name="experience_2[]" value="ahorro"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
@@ -387,7 +383,7 @@
 									<div class="form-group" style="margin-right: 12px;">
 										<div class="form-group">
 											<label class="container_check version_2 active">Corriente
-												<input type="checkbox" name="experience_1[]" value="Corriente"
+												<input type="checkbox" name="experience_2[]" value="Corriente"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
@@ -404,11 +400,11 @@
 								<h5>Tiene tarjetas de credito</h5>
 								<div style="display: flex;">
 									<label class="container_radio version_2" style="margin-right: 12px;">Si, tengo
-										<input type="radio" name="experience_1[]" value="yes" class="required">
+										<input type="radio" name="experience_3[]" value="yes" class="required">
 										<span class="checkmark"></span>
 									</label>
 									<label class="container_radio version_2">No, tengo
-										<input type="radio" name="experience_1[]" value="no" class="required">
+										<input type="radio" name="experience_3[]" value="no" class="required">
 										<span class="checkmark"></span>
 									</label>
 								</div>
@@ -418,7 +414,7 @@
 									<div class="fileupload">
 										<small>(File accepted: .pdf, .doc/docx, .jpg- Tamaño maxio: 5MB)</small>
 										<input type="file" name="fileupload"
-											accept=".pdf,.jpg,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
 											class="required">
 									</div>
 								</div>
@@ -433,25 +429,25 @@
 								<div class="form-group">
 									<label for="marca_title">Marca del Auto</label>
 									<input type="text" name="marca" id="marca" class="form-control required"
-										placeholder="ingrese marca" onchange="getVals(this, 'name_field');">
+										placeholder="ingrese marca" onchange="getVals(this, 'marca');">
 								</div>
 								<div class="form-group">
 									<label>Modelo</label>
 									<!--<label for="modelo">Modelo</label>-->
 									<input type="text" name="modelo" id="modelo" class="form-control required"
-										placeholder="ingrese modelo" onchange="getVals(this, 'email_field');">
+										placeholder="ingrese modelo" onchange="getVals(this, 'modelo');">
 								</div>
 								<div class="form-group">
 									<label>Valor de compra del auto, cuanto necesitas prestar?</label>
 									<input type="text" name="valor_compra" id="valor_compra"
-										class="form-control required" placeholder="$">
+										class="form-control required" placeholder="$" onchange="getVals(this, 'valor_compra');">
 								</div>
 								<div class="form-group add_bottom_30 add_top_20">
 									<label>Fotografía del Auto que quieres comprar:</label>
 									<div class="fileupload">
-										<small>(File accepted: .pdf, .doc/docx - Tamaño maxio: 5MB)</small>
+										<small>(File accepted: .pdf, .doc/docx, .jpg - Tamaño maxio: 5MB)</small>
 										<input type="file" name="fileupload"
-											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
 											class="required">
 									</div>
 								</div>
@@ -630,7 +626,6 @@
 
 	<!-- Wizard script-->
 	<script src="js/func_1.js"></script>
-	<script src="js//Validations.js"></script>
 </body>
 
 </html>
