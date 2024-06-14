@@ -75,6 +75,7 @@ jQuery(function($) {
                     $('#Ingreso').removeClass('is-invalid');
                 }
             }
+            //para valor de compra
             if (currentStep.find('#valor_compra').length > 0) {
                 var ValorValue = $('#valor_compra').val();
                 var regexValor = /^\d+$/;
@@ -83,6 +84,31 @@ jQuery(function($) {
                     valid = false;
                 } else {
                     $('#valor_compra').removeClass('is-invalid');
+                }
+            }
+            //para marca    
+            if (currentStep.find('#marca').length > 0) {
+                var ValorValue = $('#marca').val();
+                var regexValor = /^[a-zA-Z]+$/;
+                if (!regexValor.test(ValorValue)) {
+                    $('#marca').addClass('is-invalid');
+                    valid = false;
+                } else {
+                    $('#marca').removeClass('is-invalid');
+                }
+            }
+
+            //referencia telefono
+            if (currentStep.find('#R_telefono').length > 0) {
+                var rTelefonoValue = $('#R_telefono').val();
+                var regexrTelefono = /^\d{8}$/;
+                if (!regexrTelefono.test(rTelefonoValue)) {
+                    $('#R_telefono').addClass('is-invalid');
+                    valid = false;
+
+                    
+                } else {
+                    $('#R_telefono').removeClass('is-invalid');
                 }
             }
             return valid && (!inputs.length || !!inputs.valid());
