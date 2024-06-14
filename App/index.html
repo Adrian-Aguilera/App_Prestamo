@@ -109,7 +109,11 @@
 		<div class="row row-height">
 			<div class="col-xl-4 col-lg-4 content-left">
 				<div class="content-left-wrapper" style="background-color: #20C997 !important;">
-					<a href="index.html" id="logo"><img src="img/main-logo.svg" alt width="45" height="45"></a>
+					<a href="index.html" id="logo"><svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect width="39.6699" height="11.0097" rx="0.349515" fill="white"/>
+						<rect x="13.631" y="36" width="28.6602" height="12.4078" rx="0.349515" transform="rotate(-90 13.631 36)" fill="white"/>
+						</svg>
+						</a>
 					<div>
 						<div>
 							<img src="img/puntos.svg" alt class="img-fluid points-1" width="270" height="270"> 
@@ -154,9 +158,9 @@
 										onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
-									<label for="text">DUI sin guiones</label>
+									<label for="text">DUI sin guiones</label>	
 									<input type="text" placeholder="00000000-0" name="dui" id="dui"
-										class="form-control required" onchange="getVals(this, 'email_field');">
+										class="form-control required" onchange="validarDUI(this.value)">
 								</div>
 								<br>
 								<h5>*Domicilio en el que reside</h5>
@@ -421,9 +425,6 @@
 							<!-- </></></></></> Inicio de Pagina 4 </></></></></></>-->
 
 							<div class="step">
-								<h2 class="section_title">Formulario de solicitud</h2>
-								<h3 class="main_question">Por favor rellene todos los datos
-									solicitados</h3>
 								<h5>Información del automóvil</h5>
 								<div class="form-group">
 									<label for="marca_title">Marca del Auto</label>
@@ -456,9 +457,6 @@
 
 							<!-- </></></></></> Inicio de Pagina 5 </></></></></></>-->
 							<div class="step">
-								<h2 class="section_title">Formulario de solicitud</h2>
-								<h3 class="main_question">Por favor rellene todos los datos
-									solicitados</h3>
 								<h5>Referencias personales</h5>
 								<div class="form-group">
 									<label for="referencia_title">Nombre de primera referencia
@@ -522,10 +520,6 @@
 								<div class="summary">
 									<div class="wrapper" style="    padding: 60px 0px !important;">
 										<!--<h3>Thank your for your time<br><span id="name_field"></span>!</h3>-->
-										<h2 class="section_title left-class">Formulario de solicitud</h2>
-										<h3 class="main_question left-class">Por favor rellene todos los
-											datos
-											solicitados</h3>
 										<h5 class="left-class">Autorización y Acuerdo:</h5>
 										<p class="left-class">Certifico que la información proporcionada en
 											esta
@@ -632,7 +626,7 @@
 
 	<!-- Wizard script-->
 	<script src="js/func_1.js"></script>
-
+	<script src="js//Validations.js"></script>
 </body>
 
 </html>
