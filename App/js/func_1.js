@@ -111,6 +111,19 @@ jQuery(function($) {
                     $('#R_telefono').removeClass('is-invalid');
                 }
             }
+            //segunda referencia telefono
+            if (currentStep.find('#SR_telefono').length > 0) {
+                var srTelefonoValue = $('#SR_telefono').val();
+                var regexsrTelefono = /^\d{8}$/;
+                if (!regexsrTelefono.test(srTelefonoValue)) {
+                    $('#SR_telefono').addClass('is-invalid');
+                    valid = false;
+
+                    
+                } else {
+                    $('#SR_telefono').removeClass('is-invalid');
+                }
+            }
             return valid && (!inputs.length || !!inputs.valid());
         }
     }).validate({
