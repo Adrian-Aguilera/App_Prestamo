@@ -124,6 +124,17 @@ jQuery(function($) {
                     $('#SR_telefono').removeClass('is-invalid');
                 }
             }
+            //deuda
+            if (currentStep.find('#deuda').length > 0) {
+                var DeudaValue = $('#deuda').val();
+                var regexDeuda = /^\d+$/;
+                if (!regexDeuda.test(DeudaValue)) {
+                    $('#deuda').addClass('is-invalid');
+                    valid = false;
+                } else {
+                    $('#deuda').removeClass('is-invalid');
+                }
+            }
             return valid && (!inputs.length || !!inputs.valid());
         }
     }).validate({

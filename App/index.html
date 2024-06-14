@@ -395,7 +395,9 @@
 									<label for="deuda">Monto total que pagas al mes de otros prestamos o
 										deudas</label>
 									<input type="text" name="deuda" id="deuda" class="form-control required"
-										placeholder="Monto total que pagas al mes de otros prestamos o deudas">
+										placeholder="Monto total que pagas al mes de otros prestamos o deudas"
+										onchange="getVals(this, 'deuda');"
+										>
 								</div>
 								<h5>Tiene tarjetas de credito</h5>
 								<div style="display: flex;">
@@ -522,7 +524,7 @@
 											verificación de
 											crédito. Entiendo que cualquier declaración falsa puede resultar en
 											el
-											rechazo de mi solicitud. <strong id="email_field"></strong></p>
+											rechazo de mi solicitud. <!--<strong id="email_field">--></strong></p>
 									</div>
 									<div class="text-center">
 										<div class="form-group terms" style="    background-color: #fff;">
