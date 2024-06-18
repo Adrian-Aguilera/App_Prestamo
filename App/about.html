@@ -42,6 +42,13 @@
 			font-size: 21px !important;
 			border-radius: 10px !important;
 		}
+		.btn-menu{
+			width: 203px;
+			height: 50px;
+			background-color: #04D2A5 !important;
+			font-size: 21px !important;
+			border-radius: 10px !important;
+		}
 
 		span{
 			color: #04D2A5;
@@ -147,6 +154,10 @@
 		.svg-color{
 			color: #04D2A5;
 		}
+		.menu li {
+			display: inline;
+			margin-right: 20px;
+		}
 	</style>
 
 </head>
@@ -163,41 +174,27 @@
 	
 	<header>
 		<div class="container-fluid">
-		    <div class="row">
-                <div class="col-3">
+			<div class="flex-display">
+				<div class="col-3">
                     <a href="index.html">
-						<svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<rect width="39.6699" height="11.0097" rx="0.349515" fill="white"/>
-							<rect x="13.631" y="36" width="28.6602" height="12.4078" rx="0.349515" transform="rotate(-90 13.631 36)" fill="white"/>
-						</svg>
+						<img src="img/logggo-main.png" alt="">
 					</a>
                 </div>
-                <div class="col-9 position-relative">
-                    <div id="social">
-                        <ul>
-                            <li><a href="#0"><i class="bi bi-facebook"></i></a></li>
-							<li><a href="#0"><i class="bi bi-twitter-x"></i></a></li>
-							<li><a href="#0"><i class="bi bi-instagram"></i></a></li>
-							<li><a href="#0"><i class="bi bi-tiktok"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- /social -->
-					<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
-					<!-- /menu button -->
-                    <nav>
-						<ul class="cd-primary-nav">
-							<li><a href="index.html" class="animated_link">Version 1</a></li>
-							<li><a href="index-2.html" class="animated_link">Version 2</a></li>
-							<li><a href="index-3.html" class="animated_link">Version 3</a></li>
-							<li><a href="index-4.html" class="animated_link">File Attachment demo</a></li>
-							<li><a href="about.html" class="animated_link">About Us</a></li>
-							<li><a href="contacts.html" class="animated_link">Contact Us</a></li>
-							<li><a href="#0" class="animated_link">Purchase Template</a></li>
+				<div>
+					<nav>
+						<ul class="menu">
+							<li><a href="#inicio">inicio</a></li>
+							<li><a href="#como-funciona">Cómo funciona</a></li>
+							<li><a href="#contacto">Contacto</a></li>
 						</ul>
 					</nav>
-					<!-- /menu -->
-                </div>
-            </div>
+				</div>
+				<button type="submit" class="forward btn-menu" >Formulario
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+					</svg>
+				</button>
+			</div>
 		</div>
 		<!-- /container -->
 	</header>
