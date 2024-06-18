@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Potenza - Job Application Form Wizard with Resume upload and Branch feature">
+	<meta name="author" content="Ansonika">
+	<title>Potenza | Job Application Form Wizard by Ansonika</title>
+
+	<!-- Favicons-->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
+		href="img/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
+		href="img/apple-touch-icon-144x144-precomposed.png">
+
+	<!-- GOOGLE WEB FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+
+	<!-- BASE CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/menu.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet">
+
+	<!-- YOUR CUSTOM CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+
+	<!-- MODERNIZR MENU -->
+	<script src="js/modernizr.js"></script>
+	<style>
+		.left-class {
+			text-align: left;
+		}
+		.points-1{
+			position: relative;
+			top: 2rem;
+			right: 15rem;
+			width: 150px;
+		}
+		.points-2{
+			position: relative;
+			top: -4rem;
+			width: 150px;
+			left: 15rem;
+		}
+		.img-main-1{
+			width: 27rem;
+			margin-top: 13%;
+		}
+		@media (max-width:740px ) {
+			.img-main-1 {
+				width: 16rem;
+			}
+			.points-1 {
+				top: -1vh;
+				width: 12vh;
+				left: -36vw;
+			}
+			.points-2 {
+				top: -2vh;
+				width: 14vh;
+				left: 34vw;
+			}
+		}
+		@media only screen and (min-width:740px) and (max-width: 1080px) {
+			.img-main-1 {
+				width: 17rem;
+			}
+			.points-1 {
+				display: none;
+			}
+			.points-2 {
+				display: none;
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
+
+	<nav>
+		<ul class="cd-primary-nav">
+			<li><a href="index.html" class="animated_link">Version 1</a></li>
+			<li><a href="index-2.html" class="animated_link">Version 2</a></li>
+			<li><a href="index-3.html" class="animated_link">Version 3</a></li>
+			<li><a href="index-4.html" class="animated_link">File Attachment
+					demo</a></li>
+			<li><a href="about.html" class="animated_link">About Us</a></li>
+			<li><a href="contacts.html" class="animated_link">Contact Us</a></li>
+			<li><a href="#0" class="animated_link">Purchase Template</a></li>
+		</ul>
+	</nav>
+	<!-- /menu -->
+
+	<div class="container-fluid">
+		<div class="row row-height">
+			<div class="col-xl-4 col-lg-4 content-left">
+				<div class="content-left-wrapper" style="background-color: #20C997 !important;">
+					<a href="index.html" id="logo">
+						<svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="39.6699" height="11.0097" rx="0.349515" fill="white"/>
+							<rect x="13.631" y="36" width="28.6602" height="12.4078" rx="0.349515" transform="rotate(-90 13.631 36)" fill="white"/>
+						</svg>
+						</a>
+					<div>
+						<div>
+							<img src="img/puntos.svg" alt class="img-fluid points-1" width="270" height="270"> 
+						</div>
+						<div>
+							<img src="img/main-img.svg" alt class="img-fluid img-main-1" width="270" height="270">
+						</div>
+						<div>
+							<img src="img/puntos.svg" alt class="img-fluid points-2" width="270" height="270">
+						</div>
+					</div>
+					<div class="copy">© 2024 Fast Track</div>
+				</div>
+				<!-- /content-left-wrapper -->
+			</div>
+			<!-- /content-left -->
+			<div class="col-xl-8 col-lg-8 content-right" id="start">
+				<div id="wizard_container">
+					<div id="top-wizard">
+						<span id="location"></span>
+						<div id="progressbar"></div>
+					</div>
+					<!-- /top-wizard -->
+					<!-- </></></></></> Pagina 1 </></></></></></>-->
+					<form id="wrapped" method="post" enctype="multipart/form-data">
+						<input id="website" name="website" type="text" value>
+						<!-- Leave for security protection, read docs for details -->
+						<div id="middle-wizard">
+							<div class="step">
+								<h2 class="section_title">Formulario de solicitud</h2>
+								<h3 class="main_question">Por favor rellene todos los datos
+									solicitados</h3>
+								<h5>*Información del solicitante</h5>
+								<div class="form-group">
+									<label for="name">ingrese su nombre completo</label>
+									<input type="text" name="name" id="name" class="form-control required "
+										onchange="getVals(this, 'name_field');">
+								</div>
+								<div class="form-group">
+									<label for="date">Fecha de nacimiento</label>
+									<input type="date" name="date" id="date" class="form-control required"
+										onchange="getVals(this, 'email_field');">
+								</div>
+								<div class="form-group">
+									<label for="text">DUI sin guiones</label>	
+									<input type="text" placeholder="00000000-0" name="dui" id="dui"
+										class="form-control required" onchange="getVals(this, 'dui');">
+								</div>
+								<br>
+								<h5>*Domicilio en el que reside</h5>
+								<div class="form-group">
+									<label for="text">Direccion</label>
+									<input type="text" placeholder="ingrese dirección" name="direccion" id="direccion"
+										class="form-control required" onchange="getVals(this, 'email_field');">
+								</div>
+								<div class="form-group">
+									<label for="minimum_salary_full_time">Departamento</label>
+									<div class="styled-select">
+										<select class="form-control required" id="minimum_salary_full_time"
+											name="minimum_salary_full_time">
+											<option value>Seleccione</option>
+											<option value="ahuachapan">Ahuachapán</option>
+											<option value="cabañas">Cabañas</option>
+											<option value="chalatenango">Chalatenango</option>
+											<option value="cuscatlan">Cuscatlán</option>
+											<option value="libertad">La Libertad</option>
+											<option value="paz">La Paz</option>
+											<option value="union">La Unión</option>
+											<option value="morazan">Morazán</option>
+											<option value="miguel">San Miguel</option>
+											<option value="san_salvador">San Salvador</option>
+											<option value="san_vicente">San Vicente</option>
+											<option value="santa_ana">Santa Ana</option>
+											<option value="sonsonate">Sonsonate</option>
+											<option value="usulutan">Usulután</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="n_telefono">Numero de telefono</label>
+									<input type="text" placeholder="00000000-0" name="telefono" id="telefono"
+										class="form-control required" onchange="getVals(this, 'telefono');">
+								</div>
+								<div class="form-group">
+									<label for="mail">Correo electrónico</label>
+									<input type="email" placeholder="0000-000000-000-0" name="mail" id="email"
+										class="form-control required" onchange="getVals(this, 'email_field');">
+								</div>
+								<!--
+								<div class="form-group radio_input">
+								    <label class="container_radio me-3">Male
+								        <input type="radio" name="gender" value="Male" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">Female
+								        <input type="radio" name="gender" value="Female" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>-->
+								<div class="form-group add_bottom_30 add_top_20">
+									<label>Recibo de Luz o Agua<br></label>
+									<div class="fileupload">
+										<small>(File accepted: .pdf, .doc/docx - Tamaño maxio: 5MB)</small>
+										<input type="file" name="fileupload"
+											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+											class="required">
+									</div>
+								</div>
+							</div>
+							<!-- /step-->
+							<!-- </></></></></> fin de Pagina 1 </></></></></></>-->
+
+							<!-- </></></></></> Inicio de Pagina 2 </></></></></></>-->
+							<div class="step">
+								<h5>Información laboral</h5>
+								<div class="form-group">
+									<label for="E_employer">Empleador actual</label>
+									<input type="text" placeholder="ingrese nombre de la empresa" name="E_employer"
+										id="E_employer" class="form-control required"
+										onchange="getVals(this, 'email_field');">
+								</div>
+								<div class="form-group">
+									<label for="E_employer_boss">Nombre de su jefe superior
+										inmediato</label>
+									<input type="text" placeholder="ingrese nombre de su jefe" name="E_employer_boss"
+										id="E_employer_boss" class="form-control required"
+										onchange="getVals(this, 'email_field');">
+								</div>
+
+								<h5>*Dirección del empleador (Empresa)</h5>
+								<div class="form-group">
+									<label for="address">Dirección</label>
+									<input type="text" placeholder="ingrese dirección" name="address" id="address"
+										class="form-control required" onchange="getVals(this, 'email_field');">
+								</div>
+								<div class="form-group">
+									<label for="minimum_salary_full_time">Departamento</label>
+									<div class="styled-select">
+										<select class="form-control required" id="minimum_salary_full_time"
+											name="minimum_salary_full_time">
+											<option value>Seleccione</option>
+											<option value="ahuachapan">Ahuachapán</option>
+											<option value="cabañas">Cabañas</option>
+											<option value="chalatenango">Chalatenango</option>
+											<option value="cuscatlan">Cuscatlán</option>
+											<option value="libertad">La Libertad</option>
+											<option value="paz">La Paz</option>
+											<option value="union">La Unión</option>
+											<option value="morazan">Morazán</option>
+											<option value="miguel">San Miguel</option>
+											<option value="san_salvador">San Salvador</option>
+											<option value="san_vicente">San Vicente</option>
+											<option value="santa_ana">Santa Ana</option>
+											<option value="sonsonate">Sonsonate</option>
+											<option value="usulutan">Usulután</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="text">Cargo</label>
+									<input type="text" placeholder="ingrese el cargo que desempeña" name="cargo"
+										id="cargo" class="form-control required"
+										onchange="getVals(this, 'cargo');">
+								</div>
+								<div style="display: flex;">
+									<div class="form-group" style="width: 50%; margin-right: 26px;">
+										<label for="text">Años de antiguedad</label>
+										<input type="text" placeholder="ingrese años de antiguedad" name="antiguedad"
+											id="antiguedad" class="form-control required"
+											onchange="getVals(this, 'antiguedad');">
+									</div>
+									<div class="form-group">
+										<label for="text">Ingreso bruto mensual</label>
+										<input type="text" placeholder="$ ingrese monto" name="Ingreso" id="Ingreso"
+											class="form-control required" onchange="getVals(this, 'Ingreso');">
+									</div>
+								</div>
+								<!--<div class="form-group">
+									<label class="container_radio version_2">Full time availability
+										<input type="radio" name="availability" value="Full-time" class="required">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio version_2">Part time availability
+										<input type="radio" name="availability" value="Part-time" class="required">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio version_2">Freelance / Contract availability
+										<input type="radio" name="availability" value="Freelance-Contract"
+											class="required">
+										<span class="checkmark"></span>
+									</label>
+								</div>
+								<small>* Start branch radio based </small>-->
+							</div>
+							<!-- </></></></></> Fin de Pagina 2 </></></></></></>-->
+
+							<!-- /step-->
+							<!-- </></></></></> Inicio de Pagina 3 </></></></></></>-->
+
+							<div class="step">
+								<h5>Información financiera</h5>
+								<label for>Seleccione los bancos con los que tiene cuenta</label>
+								<div style="
+								display: flex;
+    							flex-wrap: wrap;
+								width: 110%;">
+									<div class="form-group" style="margin-right: 12px;">
+										<label class="container_check version_2 active">Banco Agrícola
+											<input type="checkbox" name="experience_1[]" value="banco_agricola"
+												class="required">
+											<span class="checkmark"></span>
+										</label>
+										<div class="form-group">
+											<label class="container_check version_2 active">Banco Cuscatlán
+												<input type="checkbox" name="experience_1[]" value="banco_cuscatlan"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+										<div class="form-group">
+											<label class="container_check version_2 active">BAC
+												<input type="checkbox" name="experience_1[]" value="banco_BAC"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+									</div>
+									<div class="form-group" style="margin-right: 12px;">
+										<label class="container_check version_2 active">Banco El Salvador
+											<input type="checkbox" name="experience_1[]" value="banco_Salvador"
+												class="required">
+											<span class="checkmark"></span>
+										</label>
+										<div class="form-group">
+											<label class="container_check version_2 active">Banco Davivienda
+												<input type="checkbox" name="experience_1[]" value="banco_davivienda"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+										<div class="form-group">
+											<label class="container_check version_2 active">Banco ABANK
+												<input type="checkbox" name="experience_1[]" value="banco_abank"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="container_check version_2 active">Otros
+											<input type="checkbox" name="experience_1[]" value="otros" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								<h5>Tipos de cuentas que posee</h5>
+								<div style="display: flex;">
+									<div class="form-group" style="margin-right: 12px;">
+										<div class="form-group">
+											<label class="container_check version_2 active">Ahorro
+												<input type="checkbox" name="experience_2[]" value="ahorro"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+									</div>
+									<div class="form-group" style="margin-right: 12px;">
+										<div class="form-group">
+											<label class="container_check version_2 active">Corriente
+												<input type="checkbox" name="experience_2[]" value="Corriente"
+													class="required">
+												<span class="checkmark"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<h5>Monto de deudas adquiridas</h5>
+								<div class="form-group">
+									<label for="deuda">Monto total que pagas al mes de otros prestamos o
+										deudas</label>
+									<input type="text" name="deuda" id="deuda" class="form-control required"
+										placeholder="Monto total que pagas al mes de otros prestamos o deudas"
+										onchange="getVals(this, 'deuda');"
+										>
+								</div>
+								<h5>Tiene tarjetas de credito</h5>
+								<div style="display: flex;">
+									<label class="container_radio version_2" style="margin-right: 12px;">Si, tengo
+										<input type="radio" name="experience_3[]" value="yes" class="required">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio version_2">No, tengo
+										<input type="radio" name="experience_3[]" value="no" class="required">
+										<span class="checkmark"></span>
+									</label>
+								</div>
+
+								<div class="form-group add_bottom_30 add_top_20">
+									<label>Subir screenshot de cuenta de últimos 3 meses<br></label>
+									<div class="fileupload">
+										<small>(File accepted: .pdf, .doc/docx, .jpg- Tamaño maxio: 5MB)</small>
+										<input type="file" name="fileupload"
+											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
+											class="required">
+									</div>
+								</div>
+							</div>
+							<!-- /step-->
+							<!-- </></></></></> Fin de Pagina 3 </></></></></></>-->
+
+							<!-- </></></></></> Inicio de Pagina 4 </></></></></></>-->
+
+							<div class="step">
+								<h5>Información del automóvil</h5>
+								<div class="form-group">
+									<label for="marca_title">Marca del Auto</label>
+									<input type="text" name="marca" id="marca" class="form-control required"
+										placeholder="ingrese marca" onchange="getVals(this, 'marca');">
+								</div>
+								<div class="form-group">
+									<label>Modelo</label>
+									<!--<label for="modelo">Modelo</label>-->
+									<input type="text" name="modelo" id="modelo" class="form-control required"
+										placeholder="ingrese modelo" onchange="getVals(this, 'modelo');">
+								</div>
+								<div class="form-group">
+									<label>Valor de compra del auto, cuanto necesitas prestar?</label>
+									<input type="text" name="valor_compra" id="valor_compra"
+										class="form-control required" placeholder="$" onchange="getVals(this, 'valor_compra');">
+								</div>
+								<div class="form-group add_bottom_30 add_top_20">
+									<label>Fotografía del Auto que quieres comprar:</label>
+									<div class="fileupload">
+										<small>(File accepted: .pdf, .doc/docx, .jpg - Tamaño maxio: 5MB)</small>
+										<input type="file" name="fileupload"
+											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
+											class="required">
+									</div>
+								</div>
+							</div>
+							<!-- /step-->
+							<!-- </></></></></> Fin de Pagina 4 </></></></></></>-->
+
+							<!-- </></></></></> Inicio de Pagina 5 </></></></></></>-->
+							<div class="step">
+								<h5>Referencias personales</h5>
+								<div class="form-group">
+									<label for="referencia_title">Nombre de primera referencia
+										personal</label>
+									<input type="text" name="referencia_first" id="referencia_first"
+										class="form-control required" placeholder="Ingrese nombre"
+										onchange="getVals(this, 'name_field');">
+								</div>
+								<div class="form-group">
+									<label for="minimum_salary_full_time">Relacion</label>
+									<div class="styled-select">
+										<select class="form-control required" id="minimum_salary_full_time"
+											name="minimum_salary_full_time">
+											<option value>Seleccione una opcion</option>
+											<option value="familiar">familiar </option>
+											<option value="amistad">amistad</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="n_telefono">Numero de telefono</label>
+									<input type="text" placeholder="00000000-0" name="R_telefono"
+										id="R_telefono" class="form-control required"
+										onchange="getVals(this, 'R_telefono');">
+								</div>
+								<div class="form-group">
+									<label for="referencia_second_title">Nombre de segunda referencia
+										personal</label>
+									<input type="text" name="referencia_second" id="referencia_second"
+										class="form-control required" placeholder="Ingrese nombre"
+										onchange="getVals(this, 'name_field');">
+								</div>
+								<div class="form-group">
+									<label for="minimum_salary_full_time">Relacion</label>
+									<div class="styled-select">
+										<select class="form-control required" id="minimum_salary_full_time"
+											name="minimum_salary_full_time">
+											<option value>Seleccione una opcion</option>
+											<option value="familiar">familiar </option>
+											<option value="amistad">amistad</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="n_telefono">Segundo numero de telefono</label>
+									<input type="text" placeholder="00000000-0" name="SR_telefono"
+										id="SR_telefono" class="form-control required"
+										onchange="getVals(this, 'SR_telefono');">
+								</div>
+							</div>
+							<!-- </></></></></> Fin de Pagina 5 </></></></></></>-->
+
+							<div class="submit step" id="end">
+								<div class="summary">
+									<div class="wrapper" style="    padding: 60px 0px !important;">
+										<!--<h3>Thank your for your time<br><span id="name_field"></span>!</h3>-->
+										<h5 class="left-class">Autorización y Acuerdo:</h5>
+										<p class="left-class">Certifico que la información proporcionada en
+											esta
+											solicitud es verdadera y correcta. Autorizo al prestamista a
+											verificar la
+											información proporcionada, incluyendo la realización de una
+											verificación de
+											crédito. Entiendo que cualquier declaración falsa puede resultar en
+											el
+											rechazo de mi solicitud. <!--<strong id="email_field">--></strong></p>
+									</div>
+									<div class="text-center">
+										<div class="form-group terms" style="    background-color: #fff;">
+											<div style="justify-content: center; display: flex;">
+												<label class="container_check">Acepto *<a href="#"
+														data-bs-toggle="modal" data-bs-target="#terms-txt"></a>
+													<input type="checkbox" name="terms" value="Yes" class="required">
+													<span class="checkmark"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /step last-->
+
+						</div>
+						<!-- /middle-wizard -->
+						<div id="bottom-wizard">
+							<button type="button" name="backward" class="backward">Atras</button>
+							<button type="button" name="forward" class="forward"
+								style="background: #00838F;">Siguiente</button>
+							<button type="submit" name="process" class="submit">Finalizar</button>
+						</div>
+						<!-- /bottom-wizard -->
+					</form>
+				</div>
+				<!-- /Wizard container -->
+			</div>
+			<!-- /content-right-->
+		</div>
+		<!-- /row-->
+	</div>
+	<!-- /container-fluid -->
+
+	<div class="cd-overlay-nav">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-nav -->
+
+	<div class="cd-overlay-content">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-content -->
+
+	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+	<!-- /menu button -->
+
+	<!-- Modal terms -->
+	<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod
+							novum accumsan</strong>,
+						mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex
+						prompta alterum sanctus,
+						pro ne quod dicunt sensibus.</p>
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum
+						accumsan, mei ludus tamquam
+						dolores id. No sit debitis meliore postulant, per ex prompta alterum
+						sanctus, pro ne quod dicunt
+						sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius
+							qui</strong>, in nec quod novum
+						accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant,
+						per ex prompta alterum
+						sanctus, pro ne quod dicunt sensibus.</p>
+					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum
+						accumsan, mei ludus tamquam
+						dolores id. No sit debitis meliore postulant, per ex prompta alterum
+						sanctus, pro ne quod dicunt
+						sensibus.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn_1" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+
+	<!-- COMMON SCRIPTS -->
+	<script src="js/jquery-3.7.1.min.js"></script>
+	<script src="js/common_scripts.min.js"></script>
+	<script src="js/velocity.min.js"></script>
+	<script src="js/common_functions.js"></script>
+	<script src="js/file-validator.js"></script>
+
+	<!-- Wizard script-->
+	<script src="js/func_1.js"></script>
+</body>
+
+</html>
