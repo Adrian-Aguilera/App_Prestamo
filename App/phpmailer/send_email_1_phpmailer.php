@@ -18,16 +18,17 @@
 
     <!-- YOUR CUSTOM CSS -->
     <link href="../css/custom.css" rel="stylesheet">
-    
+
     <script type="text/javascript">
-    function delayedRedirect(){
+    function delayedRedirect() {
         window.location = "../index.html"
     }
     </script>
 
 </head>
+
 <body onLoad="setTimeout('delayedRedirect()', 8000)" style="background-color:#fff;">
-<?php
+    <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -40,8 +41,8 @@ $mail = new PHPMailer(true);
 try {
 
     //Recipients - main edits
-    $mail->setFrom('info@potenza.com', 'Message from POTENZA');                    // Email Address and Name FROM
-    $mail->addAddress('jhon@potenza.com', 'Jhon Doe');                             // Email Address and Name TO - Name is optional
+    $mail->setFrom('cruz74270@gmail.com', 'Message from prueba');                    // Email Address and Name FROM
+    $mail->addAddress('adrian.aguileragcm@gmail.com', 'test');                             // Email Address and Name TO - Name is optional
     $mail->addReplyTo('noreply@potenza.com', 'Message from POTENZA');              // Email Address and Name NOREPLY
     $mail->isHTML(true);                                                       
     $mail->Subject = 'Message from POTENZA';                                       // Email Subject
@@ -140,7 +141,8 @@ try {
 	}
 	
 ?>
-<!-- END SEND MAIL SCRIPT -->   
+    <!-- END SEND MAIL SCRIPT -->
 
 </body>
+
 </html>
