@@ -221,6 +221,7 @@ h5{
     }
     .img-mobile{
         display: block;
+        margin-left: 14%;
     }
 }
 @media only screen and (min-width:740px) and (max-width: 1080px) {
