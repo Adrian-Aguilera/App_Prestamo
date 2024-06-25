@@ -116,7 +116,7 @@ h5{
     margin-right: 11px;
 }
 .margin-bottom10{
-    margin-bottom: 10px;
+    margin-bottom: 22px;
 }
 .svg-color{
     color: #04D2A5;
@@ -221,7 +221,10 @@ h5{
     }
     .img-mobile{
         display: block;
-        margin-left: 14%;
+        margin-left: 6%;
+    }
+    .mart-9{
+        margin-top: 19px;
     }
 }
 @media only screen and (min-width:740px) and (max-width: 1080px) {
