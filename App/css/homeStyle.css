@@ -153,6 +153,12 @@ h5{
 .aling-center{
     text-align: left;
 }
+.img-caracteristica{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5%;
+}
 @media (max-width:740px ) {
     header{
         display: block !important;
