@@ -92,11 +92,11 @@
 					</div>
 					<!-- /top-wizard -->
 					<!-- </></></></></> Pagina 1 </></></></></></>-->
-					<form id="wrapped" method="post" enctype="multipart/form-data" class="margin-desktop">
+					<form id="wrapped" method="post" enctype="multipart/form-data">
 						<input id="website" name="website" type="text" value>
 						<!-- Leave for security protection, read docs for details -->
 						<div id="middle-wizard">
-							<div class="step">
+							<div class="step margin-desktop">
 								<h2 class="section_title">Formulario de solicitud</h2>
 								<h3 class="main_question">Por favor rellene todos los datos
 									solicitados</h3>
@@ -249,20 +249,20 @@
 								width: 110%;">
 									<div class="form-group" style="margin-right: 12px;">
 										<label class="container_check version_2 active">Banco Agrícola
-											<input type="checkbox" name="bancoJSON" value="banco_agricola"
+											<input type="checkbox" name="bancoJSON[]" value="banco_agricola"
 												class="required">
 											<span class="checkmark"></span>
 										</label>
 										<div class="form-group">
 											<label class="container_check version_2 active">Banco Cuscatlán
-												<input type="checkbox" name="bancoJSON" value="banco_cuscatlan"
+												<input type="checkbox" name="bancoJSON[]" value="banco_cuscatlan"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
 										</div>
 										<div class="form-group">
 											<label class="container_check version_2 active">BAC
-												<input type="checkbox" name="bancoJSON" value="banco_BAC"
+												<input type="checkbox" name="bancoJSON[]" value="banco_BAC"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
@@ -270,20 +270,20 @@
 									</div>
 									<div class="form-group" style="margin-right: 12px;">
 										<label class="container_check version_2 active">Banco El Salvador
-											<input type="checkbox" name="bancoJSON" value="banco_Salvador"
+											<input type="checkbox" name="bancoJSON[]" value="banco_Salvador"
 												class="required">
 											<span class="checkmark"></span>
 										</label>
 										<div class="form-group">
 											<label class="container_check version_2 active">Banco Davivienda
-												<input type="checkbox" name="bancoJSON" value="banco_davivienda"
+												<input type="checkbox" name="bancoJSON[]" value="banco_davivienda"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
 										</div>
 										<div class="form-group">
 											<label class="container_check version_2 active">Banco ABANK
-												<input type="checkbox" name="bancoJSON" value="banco_abank"
+												<input type="checkbox" name="bancoJSON[]" value="banco_abank"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
@@ -291,7 +291,7 @@
 									</div>
 									<div class="form-group">
 										<label class="container_check version_2 active">Otros
-											<input type="checkbox" name="bancoJSON" value="otros" class="required">
+											<input type="checkbox" name="bancoJSON[]" value="otros" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
