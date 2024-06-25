@@ -73,7 +73,6 @@ span{
     display: flex;
     align-content: space-between;
     align-items: center;
-    box-shadow: -4px 7px 25px -1px rgba(0,0,0,0.55);
 }
 .container-img{
     margin: 20px;
