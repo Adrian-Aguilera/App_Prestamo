@@ -147,8 +147,15 @@ h5{
 .img-bt2{
     margin-bottom: 14px;
 }
+
+.nav-ocult{
+    display: none !important;
+}
 @media (max-width:740px ) {
     header{
+        display: block !important;
+    }
+    .nav-ocult{
         display: block !important;
     }
     .menu-component{
