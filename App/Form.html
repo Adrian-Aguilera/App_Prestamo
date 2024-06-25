@@ -108,7 +108,7 @@
 								</div>
 								<div class="form-group">
 									<label for="date">Fecha de nacimiento</label>
-									<input type="date" name="date" id="date" class="form-control required"
+									<input type="date" name="date-nacimiento" id="date" class="form-control required"
 										onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
@@ -124,10 +124,10 @@
 										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
-									<label for="minimum_salary_full_time">Departamento</label>
+									<label for="departamento">Departamento</label>
 									<div class="styled-select">
-										<select class="form-control required" id="minimum_salary_full_time"
-											name="minimum_salary_full_time">
+										<select class="form-control required" id="departamento1-option"
+											name="departamento1-option">
 											<option value>Seleccione</option>
 											<option value="ahuachapan">Ahuachapán</option>
 											<option value="cabañas">Cabañas</option>
@@ -147,26 +147,15 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="n_telefono">Numero de telefono</label>
-									<input type="text" placeholder="0000-0000" name="telefono" id="telefono"
-										class="form-control required" onchange="getVals(this, 'telefono');">
+									<label for="telefono">Numero de telefono</label>
+									<input type="text" placeholder="0000-0000" name="Ntelefono" id="Ntelefono"
+										class="form-control required" onchange="getVals(this, 'Ntelefono');">
 								</div>
 								<div class="form-group">
 									<label for="mail">Correo electrónico</label>
 									<input type="email" placeholder="@mail.com" name="mail" id="email"
 										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
-								<!--
-								<div class="form-group radio_input">
-								    <label class="container_radio me-3">Male
-								        <input type="radio" name="gender" value="Male" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">Female
-								        <input type="radio" name="gender" value="Female" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								</div>-->
 								<div class="form-group add_bottom_30 add_top_20">
 									<label>Recibo de Luz o Agua<br></label>
 									<div class="fileupload">
@@ -204,10 +193,10 @@
 										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
-									<label for="minimum_salary_full_time">Departamento</label>
+									<label for="departamento2">Departamento</label>
 									<div class="styled-select">
-										<select class="form-control required" id="minimum_salary_full_time"
-											name="minimum_salary_full_time">
+										<select class="form-control required" id="departamento2-option"
+											name="departamento2-option">
 											<option value>Seleccione</option>
 											<option value="ahuachapan">Ahuachapán</option>
 											<option value="cabañas">Cabañas</option>
@@ -245,22 +234,6 @@
 											class="form-control required" onchange="getVals(this, 'Ingreso');">
 									</div>
 								</div>
-								<!--<div class="form-group">
-									<label class="container_radio version_2">Full time availability
-										<input type="radio" name="availability" value="Full-time" class="required">
-										<span class="checkmark"></span>
-									</label>
-									<label class="container_radio version_2">Part time availability
-										<input type="radio" name="availability" value="Part-time" class="required">
-										<span class="checkmark"></span>
-									</label>
-									<label class="container_radio version_2">Freelance / Contract availability
-										<input type="radio" name="availability" value="Freelance-Contract"
-											class="required">
-										<span class="checkmark"></span>
-									</label>
-								</div>
-								<small>* Start branch radio based </small>-->
 							</div>
 							<!-- </></></></></> Fin de Pagina 2 </></></></></></>-->
 
@@ -368,7 +341,7 @@
 								<div class="form-group add_bottom_30 add_top_20">
 									<label>Subir screenshot de cuenta de últimos 3 meses<br></label>
 									<div class="fileupload">
-										<small>(File accepted: .pdf, .doc/docx, .jpg- Tamaño maxio: 5MB)</small>
+										<small>(File accepted: .jpg- Tamaño maxio: 5MB)</small>
 										<input type="file" name="fileupload"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
 											class="required">
@@ -379,7 +352,6 @@
 							<!-- </></></></></> Fin de Pagina 3 </></></></></></>-->
 
 							<!-- </></></></></> Inicio de Pagina 4 </></></></></></>-->
-
 							<div class="step">
 								<h5>Información del automóvil</h5>
 								<div class="form-group">
@@ -401,7 +373,7 @@
 								<div class="form-group add_bottom_30 add_top_20">
 									<label>Fotografía del Auto que quieres comprar:</label>
 									<div class="fileupload">
-										<small>(File accepted: .pdf, .doc/docx, .jpg - Tamaño maxio: 5MB)</small>
+										<small>(File accepted: .jpg - Tamaño maxio: 5MB)</small>
 										<input type="file" name="fileupload"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
 											class="required">
@@ -424,8 +396,8 @@
 								<div class="form-group">
 									<label for="minimum_salary_full_time">Relacion</label>
 									<div class="styled-select">
-										<select class="form-control required" id="minimum_salary_full_time"
-											name="minimum_salary_full_time">
+										<select class="form-control required" id="relacion1-option"
+											name="relacion1-option">
 											<option value>Seleccione una opcion</option>
 											<option value="familiar">familiar </option>
 											<option value="amistad">amistad</option>

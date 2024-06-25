@@ -30,101 +30,103 @@
 <body onLoad="setTimeout('delayedRedirect()', 8000)" style="background-color:#fff;">
     <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
 
-require 'src/Exception.php';
-require 'src/PHPMailer.php';
+    require 'src/Exception.php';
+    require 'src/PHPMailer.php';
 
-$mail = new PHPMailer(true);
+    $mail = new PHPMailer(true);
 
-try {
+    try {
+        //Recipients - main edits
+        $mail->setFrom('cruz74270@gmail.com', 'Message from prueba');  // Email Address and Name FROM
+        $mail->addAddress('adrian.aguileragcm@gmail.com', 'test');  // Email Address and Name TO - Name is optional
+        $mail->addReplyTo('noreply@potenza.com', 'Message from POTENZA');  // Email Address and Name NOREPLY
+        $mail->isHTML(true);
+        $mail->Subject = 'Message from POTENZA';  // Email Subject
 
-    //Recipients - main edits
-    $mail->setFrom('cruz74270@gmail.com', 'Message from prueba');                    // Email Address and Name FROM
-    $mail->addAddress('adrian.aguileragcm@gmail.com', 'test');                             // Email Address and Name TO - Name is optional
-    $mail->addReplyTo('noreply@potenza.com', 'Message from POTENZA');              // Email Address and Name NOREPLY
-    $mail->isHTML(true);                                                       
-    $mail->Subject = 'Message from POTENZA';                                       // Email Subject
+        //The email body message
+        $message  = "<strong>Formulario de solicitud</strong><br />";
+        $message .= "Nombre completo: " . (isset($_POST['name']) ? $_POST['name'] : '') . "<br />";
+        $message .= "Fecha de nacimiento: " . (isset($_POST['date-nacimiento']) ? $_POST['date-nacimiento'] : '') . "<br />";
+        $message .= "DUI: " . (isset($_POST['dui']) ? $_POST['dui'] : '') . "<br />";
+        $message .= "Dirección: " . (isset($_POST['direccion']) ? $_POST['direccion'] : '') . "<br />";
+        $message .= "Departamento: " . (isset($_POST['departamento1-option']) ? $_POST['departamento1-option'] : '') . "<br />";
+        $message .= "Teléfono: " . (isset($_POST['Ntelefono']) ? $_POST['Ntelefono'] : '') . "<br />";
+        $message .= "Correo electrónico: " . (isset($_POST['mail']) ? $_POST['mail'] : '') . "<br />";
+        $message .= "Empleador actual: " . (isset($_POST['E_employer']) ? $_POST['E_employer'] : '') . "<br />";
+        $message .= "Nombre del jefe: " . (isset($_POST['E_employer_boss']) ? $_POST['E_employer_boss'] : '') . "<br />";
+        $message .= "Dirección del empleador: " . (isset($_POST['address']) ? $_POST['address'] : '') . "<br />";
+        $message .= "Departamento del empleador: " . (isset($_POST['departamento2-option']) ? $_POST['departamento2-option'] : '') . "<br />";
+        $message .= "Cargo: " . (isset($_POST['cargo']) ? $_POST['cargo'] : '') . "<br />";
+        $message .= "Años de antigüedad: " . (isset($_POST['antiguedad']) ? $_POST['antiguedad'] : '') . "<br />";
+        $message .= "Ingreso bruto mensual: " . (isset($_POST['Ingreso']) ? $_POST['Ingreso'] : '') . "<br />";
+        $message .= "Deuda mensual: " . (isset($_POST['deuda']) ? $_POST['deuda'] : '') . "<br />";
+        $message .= "Marca del auto: " . (isset($_POST['marca']) ? $_POST['marca'] : '') . "<br />";
+        $message .= "Modelo del auto: " . (isset($_POST['modelo']) ? $_POST['modelo'] : '') . "<br />";
+        $message .= "Valor de compra del auto: " . (isset($_POST['valor_compra']) ? $_POST['valor_compra'] : '') . "<br />";
+        $message .= "Primera referencia personal: " . (isset($_POST['referencia_first']) ? $_POST['referencia_first'] : '') . "<br />";
+        $message .= "Relación primera referencia: " . (isset($_POST['relacion1-option']) ? $_POST['relacion1-option'] : '') . "<br />";
+        $message .= "Teléfono primera referencia: " . (isset($_POST['R_telefono']) ? $_POST['R_telefono'] : '') . "<br />";
+        $message .= "Segunda referencia personal: " . (isset($_POST['referencia_second']) ? $_POST['referencia_second'] : '') . "<br />";
+        $message .= "Relación segunda referencia: " . (isset($_POST['minimum_salary_full_time']) ? $_POST['minimum_salary_full_time'] : '') . "<br />";
+        $message .= "Teléfono segunda referencia: " . (isset($_POST['SR_telefono']) ? $_POST['SR_telefono'] : '') . "<br />";
+        $message .= "Términos aceptados: " . (isset($_POST['terms']) ? $_POST['terms'] : '') . "<br />";
 
-    //The email body message
-    $message  = "<strong>Presentation</strong><br />";
-    $message .= "First and Last Name: " . $_POST['name'];
-    $message .= "<br />Email: " . $_POST['email'];
-    $message .= "<br />Telephone: " . $_POST['phone'];
-    $message .= "<br />Gender: " . $_POST['gender'];                
-    
-    /* FILE UPLOAD */
-    if(isset($_FILES['fileupload'])){
-    $errors= array();
-    $file_name = $_FILES['fileupload']['name'];
-    $file_size =$_FILES['fileupload']['size'];
-    $file_tmp =$_FILES['fileupload']['tmp_name'];
-    $file_type=$_FILES['fileupload']['type'];
-    $file_ext=strtolower(end(explode('.',$_FILES['fileupload']['name'])));
-
-    $expensions= array("pdf","doc","docx");// Define with files are accepted
-                              
-    $OriginalFilename = $FinalFilename = preg_replace('`[^a-z0-9-_.]`i','',$_FILES['fileupload']['name']); 
-    $FileCounter = 1; 
-    while (file_exists( '../upload_files/'.$FinalFilename )) // The folder where the files will be stored; set the permission folder to  0755. 
-        $FinalFilename = $FileCounter++.'_'.$OriginalFilename; 
-
-        if(in_array($file_ext,$expensions)=== false){
-            $errors[]="Extension not allowed, please choose a .pdf, .doc, .docx file.";
+        /* FILE UPLOAD */
+        $upload_dir = realpath(dirname(__FILE__)) . '/../upload_files/';
+        if (!file_exists($upload_dir)) {
+            mkdir($upload_dir, 0755, true);
         }
-        // Set the files size limit WITHOUT COMMAS. Use this tool to convert the file size param https://www.thecalculator.co/others/File-Size-Converter-69.html
-        if($file_size > 153600){
-            $errors[]='File size must be max 150Kb';
-        }
-        if(empty($errors)==true){
-            move_uploaded_file($file_tmp,"../upload_files/".$FinalFilename);
-            $message .= "<br />Resume: http://www.yourdomain.com/upload_files/".$FinalFilename; // Write here the path of your upload_files folder
-        }else{
-            $message .= "<br />File name: no files uploaded";
+
+        if (isset($_FILES['fileupload']) && $_FILES['fileupload']['error'] == UPLOAD_ERR_OK) {
+            $errors = array();
+            $file_name = $_FILES['fileupload']['name'];
+            $file_size = $_FILES['fileupload']['size'];
+            $file_tmp = $_FILES['fileupload']['tmp_name'];
+            $file_type = $_FILES['fileupload']['type'];
+            $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+
+            $expensions = array("pdf", "doc", "docx", "jpg"); // Define with files are accepted
+
+            $OriginalFilename = $FinalFilename = preg_replace('`[^a-z0-9-_.]`i', '', $_FILES['fileupload']['name']);
+            $FileCounter = 1;
+            while (file_exists($upload_dir . $FinalFilename)) // The folder where the files will be stored; set the permission folder to  0755. 
+                $FinalFilename = $FileCounter++ . '_' . $OriginalFilename;
+
+            if (in_array($file_ext, $expensions) === false) {
+                $errors[] = "Extension not allowed, please choose a .pdf, .doc, .docx, .jpg file.";
             }
-        };
+            // Set the files size limit WITHOUT COMMAS. Use this tool to convert the file size param https://www.thecalculator.co/others/File-Size-Converter-69.html
+            if ($file_size > 5242880) {
+                $errors[] = 'File size must be max 5MB';
+            }
+            if (empty($errors) == true) {
+                if (move_uploaded_file($file_tmp, $upload_dir . $FinalFilename)) {
+                    $message .= "<br />Archivo: http://www.yourdomain.com/upload_files/" . $FinalFilename; // Write here the path of your upload_files folder
+                } else {
+                    $message .= "<br />Error al subir el archivo.";
+                }
+            } else {
+                $message .= "<br />File name: no files uploaded";
+            }
+        }
         /* end FILE UPLOAD */
 
-    $message .= "<br /><br /><strong>Work Availability</strong>";
-    $message .= "<br />Are you available for work: " . $_POST['availability'];
+        $mail->Body = $message;
+        $mail->send();
 
-        if (isset($_POST['minimum_salary_full_time']) && $_POST['minimum_salary_full_time'] != "")
-            {
-                $message .= "<br />Minimum salary: " . $_POST['minimum_salary_full_time'];
-                $message .= "<br />How soon would you be looking to start? " . $_POST['start_availability_full_time'];
-                $message .= "<br />Are you willing to work remotely? " . $_POST['remotely_full_time'];
-            }
-        if (isset($_POST['minimum_salary_part_time']) && $_POST['minimum_salary_part_time'] != "")
-            {
-                $message .= "<br />Minimum salary: " . $_POST['minimum_salary_part_time'];
-                $message .= "<br />How soon would you be looking to start? " . $_POST['start_availability_part_time'];
-                $message .= "<br />When you prefer to work? " . $_POST['day_preference_part_time'];
-            }
-        if (isset($_POST['fixed_rate_contract']) && $_POST['fixed_rate_contract'] != "")
-            {
-                $message .= "<br />Minimum fixed rate: " . $_POST['fixed_rate_contract'];
-                $message .= "<br />Minimum hourly rate: " . $_POST['hourly_rate_contract'];
-                $message .= "<br />Minimum hours for a contract: " . $_POST['minimum_hours_conctract'];
-                $message .= "<br />Are you willing to work remotely? " . $_POST['remotely_contract'];
-            }
-                        
-    $message .= "<br /><br />Terms and conditions accepted: " . $_POST['terms'];
+        // Confirmation/autoreply email send to who fill the form
+        $mail->ClearAddresses();
+        $mail->addAddress($_POST['mail']); // Email address entered on form
+        $mail->isHTML(true);
+        $mail->Subject = 'Confirmation'; // Custom subject
+        $mail->Body = $message;
 
-	$mail->Body = "" . $message . "";
+        $mail->Send();
 
-    $mail->send();
-
-    // Confirmation/autoreplay email send to who fill the form
-    $mail->ClearAddresses();
-    $mail->addAddress($_POST['email']); // Email address entered on form
-    $mail->isHTML(true);
-    $mail->Subject    = 'Confirmation'; // Custom subject
-    $mail->Body = "" . $message . "";
-
-    $mail->Send();
-
-    echo '<div id="success">
+        echo '<div id="success">
             <div class="icon icon--order-success svg">
                  <svg xmlns="http://www.w3.org/2000/svg" width="72px" height="72px">
                   <g fill="none" stroke="#8EC343" stroke-width="2">
@@ -136,11 +138,11 @@ try {
             <h4><span>Request successfully sent!</span>Thank you for your time</h4>
             <small>You will be redirect back in 5 seconds.</small>
         </div>';
-	} catch (Exception $e) {
-	    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-	}
-	
-?>
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+
+    ?>
     <!-- END SEND MAIL SCRIPT -->
 
 </body>
