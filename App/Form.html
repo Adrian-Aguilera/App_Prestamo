@@ -103,17 +103,17 @@
 								<h5>*Información del solicitante</h5>
 								<div class="form-group">
 									<label for="name">ingrese su nombre completo</label>
-									<input type="text" name="name" id="name" class="form-control required "
+									<input type="text" name="nombre" id="name" class="form-control required "
 										onchange="getVals(this, 'name_field');">
 								</div>
 								<div class="form-group">
 									<label for="date">Fecha de nacimiento</label>
-									<input type="date" name="date-nacimiento" id="date" class="form-control required"
+									<input type="date" name="fechaNacimiento" id="date" class="form-control required"
 										onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
-									<label for="text">DUI sin guiones</label>	
-									<input type="text" placeholder="00000000-0" name="dui" id="dui"
+									<label for="text">DUI sin guiones</label>
+									<input type="text" placeholder="00000000-0" name="Dui" id="dui"
 										class="form-control required" onchange="getVals(this, 'dui');">
 								</div>
 								<br>
@@ -127,7 +127,7 @@
 									<label for="departamento">Departamento</label>
 									<div class="styled-select">
 										<select class="form-control required" id="departamento1-option"
-											name="departamento1-option">
+											name="departamento">
 											<option value>Seleccione</option>
 											<option value="ahuachapan">Ahuachapán</option>
 											<option value="cabañas">Cabañas</option>
@@ -153,14 +153,14 @@
 								</div>
 								<div class="form-group">
 									<label for="mail">Correo electrónico</label>
-									<input type="email" placeholder="@mail.com" name="mail" id="email"
+									<input type="email" placeholder="@mail.com" name="correo" id="email"
 										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group add_bottom_30 add_top_20">
 									<label>Recibo de Luz o Agua<br></label>
 									<div class="fileupload">
 										<small>(File accepted: .pdf, .doc/docx - Tamaño maxio: 5MB)</small>
-										<input type="file" name="fileupload"
+										<input type="file" name="urlArchivoLuzAgua"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 											class="required">
 									</div>
@@ -174,14 +174,14 @@
 								<h5>Información laboral</h5>
 								<div class="form-group">
 									<label for="E_employer">Empleador actual</label>
-									<input type="text" placeholder="ingrese nombre de la empresa" name="E_employer"
+									<input type="text" placeholder="ingrese nombre de la empresa" name="Empleador"
 										id="E_employer" class="form-control required"
 										onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label for="E_employer_boss">Nombre de su jefe superior
 										inmediato</label>
-									<input type="text" placeholder="ingrese nombre de su jefe" name="E_employer_boss"
+									<input type="text" placeholder="ingrese nombre de su jefe" name="Nombrejefe"
 										id="E_employer_boss" class="form-control required"
 										onchange="getVals(this, 'email_field');">
 								</div>
@@ -189,14 +189,14 @@
 								<h5>*Dirección del empleador (Empresa)</h5>
 								<div class="form-group">
 									<label for="address">Dirección</label>
-									<input type="text" placeholder="ingrese dirección" name="address" id="address"
+									<input type="text" placeholder="ingrese dirección" name="DireccionEmpresa" id="address"
 										class="form-control required" onchange="getVals(this, 'email_field');">
 								</div>
 								<div class="form-group">
 									<label for="departamento2">Departamento</label>
 									<div class="styled-select">
 										<select class="form-control required" id="departamento2-option"
-											name="departamento2-option">
+											name="departamentoEmpresa">
 											<option value>Seleccione</option>
 											<option value="ahuachapan">Ahuachapán</option>
 											<option value="cabañas">Cabañas</option>
@@ -217,20 +217,20 @@
 								</div>
 								<div class="form-group">
 									<label for="text">Cargo</label>
-									<input type="text" placeholder="ingrese el cargo que desempeña" name="cargo"
+									<input type="text" placeholder="ingrese el cargo que desempeña" name="cargoEmpresa"
 										id="cargo" class="form-control required"
 										onchange="getVals(this, 'cargo');">
 								</div>
 								<div style="display: flex;">
 									<div class="form-group" style="width: 50%; margin-right: 26px;">
 										<label for="text">Años de antiguedad</label>
-										<input type="text" placeholder="ingrese años de antiguedad" name="antiguedad"
+										<input type="text" placeholder="ingrese años de antiguedad" name="anioEmpresa"
 											id="antiguedad" class="form-control required"
 											onchange="getVals(this, 'antiguedad');">
 									</div>
 									<div class="form-group">
 										<label for="text">Ingreso bruto mensual</label>
-										<input type="text" placeholder="$ ingrese monto" name="Ingreso" id="Ingreso"
+										<input type="text" placeholder="$ ingrese monto" name="ingresos" id="Ingreso"
 											class="form-control required" onchange="getVals(this, 'Ingreso');">
 									</div>
 								</div>
@@ -249,20 +249,20 @@
 								width: 110%;">
 									<div class="form-group" style="margin-right: 12px;">
 										<label class="container_check version_2 active">Banco Agrícola
-											<input type="checkbox" name="experience_1[]" value="banco_agricola"
+											<input type="checkbox" name="bancoJSON" value="banco_agricola"
 												class="required">
 											<span class="checkmark"></span>
 										</label>
 										<div class="form-group">
 											<label class="container_check version_2 active">Banco Cuscatlán
-												<input type="checkbox" name="experience_1[]" value="banco_cuscatlan"
+												<input type="checkbox" name="bancoJSON" value="banco_cuscatlan"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
 										</div>
 										<div class="form-group">
 											<label class="container_check version_2 active">BAC
-												<input type="checkbox" name="experience_1[]" value="banco_BAC"
+												<input type="checkbox" name="bancoJSON" value="banco_BAC"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
@@ -270,20 +270,20 @@
 									</div>
 									<div class="form-group" style="margin-right: 12px;">
 										<label class="container_check version_2 active">Banco El Salvador
-											<input type="checkbox" name="experience_1[]" value="banco_Salvador"
+											<input type="checkbox" name="bancoJSON" value="banco_Salvador"
 												class="required">
 											<span class="checkmark"></span>
 										</label>
 										<div class="form-group">
 											<label class="container_check version_2 active">Banco Davivienda
-												<input type="checkbox" name="experience_1[]" value="banco_davivienda"
+												<input type="checkbox" name="bancoJSON" value="banco_davivienda"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
 										</div>
 										<div class="form-group">
 											<label class="container_check version_2 active">Banco ABANK
-												<input type="checkbox" name="experience_1[]" value="banco_abank"
+												<input type="checkbox" name="bancoJSON" value="banco_abank"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
@@ -291,7 +291,7 @@
 									</div>
 									<div class="form-group">
 										<label class="container_check version_2 active">Otros
-											<input type="checkbox" name="experience_1[]" value="otros" class="required">
+											<input type="checkbox" name="bancoJSON" value="otros" class="required">
 											<span class="checkmark"></span>
 										</label>
 									</div>
@@ -301,7 +301,7 @@
 									<div class="form-group" style="margin-right: 12px;">
 										<div class="form-group">
 											<label class="container_check version_2 active">Ahorro
-												<input type="checkbox" name="experience_2[]" value="ahorro"
+												<input type="checkbox" name="tipoCuenta" value="ahorro"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
@@ -310,7 +310,7 @@
 									<div class="form-group" style="margin-right: 12px;">
 										<div class="form-group">
 											<label class="container_check version_2 active">Corriente
-												<input type="checkbox" name="experience_2[]" value="Corriente"
+												<input type="checkbox" name="tipoCuenta" value="Corriente"
 													class="required">
 												<span class="checkmark"></span>
 											</label>
@@ -321,7 +321,7 @@
 								<div class="form-group">
 									<label for="deuda">Monto total que pagas al mes de otros prestamos o
 										deudas</label>
-									<input type="text" name="deuda" id="deuda" class="form-control required"
+									<input type="text" name="MontoDeuda" id="deuda" class="form-control required"
 										placeholder="Monto total que pagas al mes de otros prestamos o deudas"
 										onchange="getVals(this, 'deuda');"
 										>
@@ -329,11 +329,11 @@
 								<h5>Tiene tarjetas de credito</h5>
 								<div style="display: flex;">
 									<label class="container_radio version_2" style="margin-right: 12px;">Si, tengo
-										<input type="radio" name="experience_3[]" value="yes" class="required">
+										<input type="radio" name="tarjetaCredito" value="yes" class="required">
 										<span class="checkmark"></span>
 									</label>
 									<label class="container_radio version_2">No, tengo
-										<input type="radio" name="experience_3[]" value="no" class="required">
+										<input type="radio" name="tarjetaCredito" value="no" class="required">
 										<span class="checkmark"></span>
 									</label>
 								</div>
@@ -342,7 +342,7 @@
 									<label>Subir screenshot de cuenta de últimos 3 meses<br></label>
 									<div class="fileupload">
 										<small>(File accepted: .jpg- Tamaño maxio: 5MB)</small>
-										<input type="file" name="fileupload_image1"
+										<input type="file" name="urlArchivoCuentaBanco"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
 											class="required">
 									</div>
@@ -356,25 +356,25 @@
 								<h5>Información del automóvil</h5>
 								<div class="form-group">
 									<label for="marca_title">Marca del Auto</label>
-									<input type="text" name="marca" id="marca" class="form-control required"
+									<input type="text" name="marcaAuto" id="marca" class="form-control required"
 										placeholder="ingrese marca" onchange="getVals(this, 'marca');">
 								</div>
 								<div class="form-group">
 									<label>Modelo</label>
 									<!--<label for="modelo">Modelo</label>-->
-									<input type="text" name="modelo" id="modelo" class="form-control required"
+									<input type="text" name="Modelo" id="modelo" class="form-control required"
 										placeholder="ingrese modelo" onchange="getVals(this, 'modelo');">
 								</div>
 								<div class="form-group">
 									<label>Valor de compra del auto, cuanto necesitas prestar?</label>
-									<input type="text" name="valor_compra" id="valor_compra"
+									<input type="text" name="valorAuto" id="valor_compra"
 										class="form-control required" placeholder="$" onchange="getVals(this, 'valor_compra');">
 								</div>
 								<div class="form-group add_bottom_30 add_top_20">
 									<label>Fotografía del Auto que quieres comprar:</label>
 									<div class="fileupload">
 										<small>(File accepted: .jpg - Tamaño maxio: 5MB)</small>
-										<input type="file" name="fileupload_image2"
+										<input type="file" name="urlArchivoFotoAuto"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
 											class="required">
 									</div>
@@ -389,7 +389,7 @@
 								<div class="form-group">
 									<label for="referencia_title">Nombre de primera referencia
 										personal</label>
-									<input type="text" name="referencia_first" id="referencia_first"
+									<input type="text" name="nombreReferencia_a" id="referencia_first"
 										class="form-control required" placeholder="Ingrese nombre"
 										onchange="getVals(this, 'name_field');">
 								</div>
@@ -397,7 +397,7 @@
 									<label for="minimum_salary_full_time">Relacion</label>
 									<div class="styled-select">
 										<select class="form-control required" id="relacion1-option"
-											name="relacion1-option">
+											name="relacionaReferencia_a">
 											<option value>Seleccione una opcion</option>
 											<option value="familiar">familiar </option>
 											<option value="amistad">amistad</option>
@@ -406,22 +406,22 @@
 								</div>
 								<div class="form-group">
 									<label for="n_telefono">Numero de telefono</label>
-									<input type="text" placeholder="0000-0000" name="R_telefono"
-										id="R_telefono" class="form-control required"
-										onchange="getVals(this, 'R_telefono');">
+									<input type="text" placeholder="0000-0000" name="telefonoreferencia_a"
+										id="telefonoreferencia_a" class="form-control required"
+										onchange="getVals(this, 'telefonoreferencia_a');">
 								</div>
 								<div class="form-group">
 									<label for="referencia_second_title">Nombre de segunda referencia
 										personal</label>
-									<input type="text" name="referencia_second" id="referencia_second"
+									<input type="text" name="nombreReferencia_b" id="nombreReferencia_b"
 										class="form-control required" placeholder="Ingrese nombre"
 										onchange="getVals(this, 'name_field');">
 								</div>
 								<div class="form-group">
 									<label for="minimum_salary_full_time">Relacion</label>
 									<div class="styled-select">
-										<select class="form-control required" id="minimum_salary_full_time"
-											name="minimum_salary_full_time">
+										<select class="form-control required" id="relacionaReferencia_b"
+											name="relacionaReferencia_b">
 											<option value>Seleccione una opcion</option>
 											<option value="familiar">familiar </option>
 											<option value="amistad">amistad</option>
@@ -430,8 +430,8 @@
 								</div>
 								<div class="form-group">
 									<label for="n_telefono">Segundo numero de telefono</label>
-									<input type="text" placeholder="0000-0000" name="SR_telefono"
-										id="SR_telefono" class="form-control required"
+									<input type="text" placeholder="0000-0000" name="telefonoreferencia_b"
+										id="telefonoreferencia_b" class="form-control required"
 										onchange="getVals(this, 'SR_telefono');">
 								</div>
 							</div>
