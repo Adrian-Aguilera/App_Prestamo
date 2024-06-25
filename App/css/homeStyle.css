@@ -42,12 +42,12 @@ span{
     width: 82%;	
 }
 .content-intern{
-    background-image: url("../img/Frame.png");
+    background-image: url("../img/circle.svg");
     background-repeat: no-repeat;
     background-size: contain;
 }
 .image-container{
-    background-image: url("../img/image 1.png");
+    background-image: url("../img/auto.svg");
     background-repeat: no-repeat;
     background-size: contain;
     width: 42%;
