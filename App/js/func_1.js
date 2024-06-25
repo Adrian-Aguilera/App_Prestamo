@@ -7,7 +7,8 @@ jQuery(function($) {
     // PHPMailer text/html SMTP > phpmailer/send_email_1_phpmailer_smtp.php
     // PHPMailer with html template > phpmailer/send_email_1_phpmailer_template.php
     // PHPMailer with html template SMTP > phpmailer/send_email_1_phpmailer_template_smtp.php
-    $('form#wrapped').attr('action', 'phpmailer/send_email_1_phpmailer.php');
+    //$('form#wrapped').attr('action', 'phpmailer/send_email_1_phpmailer.php');
+    $('form#wrapped').attr('action', 'Script/logicForm.php');
     $("#wizard_container").wizard({
         stepsWrapper: "#wrapped",
         submit: ".submit",
