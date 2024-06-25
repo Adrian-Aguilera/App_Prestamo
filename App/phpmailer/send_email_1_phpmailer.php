@@ -39,14 +39,14 @@
     $mail = new PHPMailer(true);
 
     try {
-        //Recipients - main edits
+        // Recipients - main edits
         $mail->setFrom('cruz74270@gmail.com', 'Message from prueba');  // Email Address and Name FROM
         $mail->addAddress('adrian.aguileragcm@gmail.com', 'test');  // Email Address and Name TO - Name is optional
         $mail->addReplyTo('noreply@potenza.com', 'Message from POTENZA');  // Email Address and Name NOREPLY
         $mail->isHTML(true);
         $mail->Subject = 'Message from POTENZA';  // Email Subject
 
-        //The email body message
+        // The email body message
         $message  = "<strong>Formulario de solicitud</strong><br />";
         $message .= "Nombre completo: " . (isset($_POST['name']) ? $_POST['name'] : '') . "<br />";
         $message .= "Fecha de nacimiento: " . (isset($_POST['date-nacimiento']) ? $_POST['date-nacimiento'] : '') . "<br />";
@@ -74,45 +74,68 @@
         $message .= "Teléfono segunda referencia: " . (isset($_POST['SR_telefono']) ? $_POST['SR_telefono'] : '') . "<br />";
         $message .= "Términos aceptados: " . (isset($_POST['terms']) ? $_POST['terms'] : '') . "<br />";
 
-        /* FILE UPLOAD */
+        // Function to handle file upload
+        function handleFileUpload($file, $allowed_extensions, $upload_dir) {
+            $errors = array();
+            $file_name = $file['name'];
+            $file_size = $file['size'];
+            $file_tmp = $file['tmp_name'];
+            $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+
+            if (!in_array($file_ext, $allowed_extensions)) {
+                $errors[] = "Extension not allowed, please choose a " . implode(', ', $allowed_extensions) . " file.";
+            }
+
+            if ($file_size > 5242880) { // 5MB limit
+                $errors[] = 'File size must be max 5MB';
+            }
+
+            if (empty($errors)) {
+                $random_name = uniqid('', true) . '.' . $file_ext;
+                $destination = $upload_dir . $random_name;
+                if (move_uploaded_file($file_tmp, $destination)) {
+                    return $random_name;
+                } else {
+                    $errors[] = "Failed to upload file";
+                }
+            }
+            return $errors;
+        }
+
+        // Set upload directory
         $upload_dir = realpath(dirname(__FILE__)) . '/../upload_files/';
         if (!file_exists($upload_dir)) {
             mkdir($upload_dir, 0755, true);
         }
 
-        if (isset($_FILES['fileupload']) && $_FILES['fileupload']['error'] == UPLOAD_ERR_OK) {
-            $errors = array();
-            $file_name = $_FILES['fileupload']['name'];
-            $file_size = $_FILES['fileupload']['size'];
-            $file_tmp = $_FILES['fileupload']['tmp_name'];
-            $file_type = $_FILES['fileupload']['type'];
-            $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-
-            $expensions = array("pdf", "doc", "docx", "jpg"); // Define with files are accepted
-
-            $OriginalFilename = $FinalFilename = preg_replace('`[^a-z0-9-_.]`i', '', $_FILES['fileupload']['name']);
-            $FileCounter = 1;
-            while (file_exists($upload_dir . $FinalFilename)) // The folder where the files will be stored; set the permission folder to  0755. 
-                $FinalFilename = $FileCounter++ . '_' . $OriginalFilename;
-
-            if (in_array($file_ext, $expensions) === false) {
-                $errors[] = "Extension not allowed, please choose a .pdf, .doc, .docx, .jpg file.";
-            }
-            // Set the files size limit WITHOUT COMMAS. Use this tool to convert the file size param https://www.thecalculator.co/others/File-Size-Converter-69.html
-            if ($file_size > 5242880) {
-                $errors[] = 'File size must be max 5MB';
-            }
-            if (empty($errors) == true) {
-                if (move_uploaded_file($file_tmp, $upload_dir . $FinalFilename)) {
-                    $message .= "<br />Archivo: http://www.yourdomain.com/upload_files/" . $FinalFilename; // Write here the path of your upload_files folder
-                } else {
-                    $message .= "<br />Error al subir el archivo.";
-                }
+        // Handle resume file upload (PDF/DOC/DOCX)
+        if (isset($_FILES['fileupload'])) {
+            $resume_result = handleFileUpload($_FILES['fileupload'], array("pdf", "doc", "docx"), $upload_dir);
+            if (is_array($resume_result)) {
+                $message .= "<br />Resume upload errors: " . implode(', ', $resume_result);
             } else {
-                $message .= "<br />File name: no files uploaded";
+                $message .= "<br />Resume: http://www.yourdomain.com/upload_files/" . $resume_result;
             }
         }
-        /* end FILE UPLOAD */
+
+        // Handle image file upload (JPG)
+        if (isset($_FILES['fileupload_image1'])) {
+            $image1_result = handleFileUpload($_FILES['fileupload_image1'], array("jpg"), $upload_dir);
+            if (is_array($image1_result)) {
+                $message .= "<br />Image 1 upload errors: " . implode(', ', $image1_result);
+            } else {
+                $message .= "<br />Image 1: http://www.yourdomain.com/upload_files/" . $image1_result;
+            }
+        }
+
+        if (isset($_FILES['fileupload_image2'])) {
+            $image2_result = handleFileUpload($_FILES['fileupload_image2'], array("jpg"), $upload_dir);
+            if (is_array($image2_result)) {
+                $message .= "<br />Image 2 upload errors: " . implode(', ', $image2_result);
+            } else {
+                $message .= "<br />Image 2: http://www.yourdomain.com/upload_files/" . $image2_result;
+            }
+        }
 
         $mail->Body = $message;
         $mail->send();
