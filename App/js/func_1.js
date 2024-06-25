@@ -8,7 +8,7 @@ jQuery(function($) {
     // PHPMailer with html template > phpmailer/send_email_1_phpmailer_template.php
     // PHPMailer with html template SMTP > phpmailer/send_email_1_phpmailer_template_smtp.php
     //$('form#wrapped').attr('action', 'phpmailer/send_email_1_phpmailer.php');
-    $('form#wrapped').attr('action', 'Script/logicForm.php');
+    $('form#wrapped').attr('action', 'http://creditocarro.pxtn82hres-zng4pm5q74dp.p.temp-site.link');
     $("#wizard_container").wizard({
         stepsWrapper: "#wrapped",
         submit: ".submit",
@@ -146,7 +146,7 @@ jQuery(function($) {
         }
     });
     //  progress bar
-    $("#progressbar").progressbar();
+    $("#progressbar").progressbar({ stepsComplete: 1 });
     $("#wizard_container").wizard({
         afterSelect: function(event, state) {
             $("#progressbar").progressbar("value", state.percentComplete);

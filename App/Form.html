@@ -31,6 +31,16 @@
 	<!-- MODERNIZR MENU -->
 	<script src="js/modernizr.js"></script>
 
+	<style>
+		body {
+			background: #fff;
+			font-size: 15px;
+			font-size: 0.9375rem;
+			line-height: 0.6 !important;
+			font-family: "Work Sans", Arial, sans-serif;
+			color: #555;
+		}
+	</style>
 </head>
 
 <body>
@@ -87,7 +97,9 @@
 			<div class="col-xl-8 col-lg-8 content-right" id="start">
 				<div id="wizard_container" class="">
 					<div id="top-wizard">
-						<span id="location"></span>
+						<div style="margin-bottom: 10px;">
+							<span id="location"></span>
+						</div>
 						<div id="progressbar"></div>
 					</div>
 					<!-- /top-wizard -->
@@ -96,7 +108,7 @@
 						<input id="website" name="website" type="text" value>
 						<!-- Leave for security protection, read docs for details -->
 						<div id="middle-wizard">
-							<div class="step margin-desktop">
+							<div class="step">
 								<h2 class="section_title">Formulario de solicitud</h2>
 								<h3 class="main_question">Por favor rellene todos los datos
 									solicitados</h3>
@@ -160,9 +172,11 @@
 									<label>Recibo de Luz o Agua<br></label>
 									<div class="fileupload">
 										<small>(File accepted: .pdf, .doc/docx - Tamaño maxio: 5MB)</small>
-										<input type="file" name="urlArchivoLuzAgua"
+										<div style="margin-top: 10px;">
+											<input type="file" name="urlArchivoLuzAgua"
 											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 											class="required">
+										</div>
 									</div>
 								</div>
 							</div>
@@ -342,9 +356,12 @@
 									<label>Subir screenshot de cuenta de últimos 3 meses<br></label>
 									<div class="fileupload">
 										<small>(File accepted: .jpg- Tamaño maxio: 5MB)</small>
-										<input type="file" name="urlArchivoCuentaBanco"
-											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
-											class="required">
+										<div style="margin-top: 10px;">
+											<input type="file" name="urlArchivoCuentaBanco"
+												accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
+												class="required">
+									
+										</div>
 									</div>
 								</div>
 							</div>
@@ -374,9 +391,11 @@
 									<label>Fotografía del Auto que quieres comprar:</label>
 									<div class="fileupload">
 										<small>(File accepted: .jpg - Tamaño maxio: 5MB)</small>
-										<input type="file" name="urlArchivoFotoAuto"
-											accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
-											class="required">
+										<div style="margin-top: 10px;">
+											<input type="file" name="urlArchivoFotoAuto"
+												accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.jpg"
+												class="required">
+										</div>
 									</div>
 								</div>
 							</div>
@@ -442,7 +461,7 @@
 									<div class="wrapper" style="    padding: 60px 0px !important;">
 										<!--<h3>Thank your for your time<br><span id="name_field"></span>!</h3>-->
 										<h5 class="left-class">Autorización y Acuerdo:</h5>
-										<p class="left-class">Certifico que la información proporcionada en
+										<p class="left-class" style="line-height: 1.5;">Certifico que la información proporcionada en
 											esta
 											solicitud es verdadera y correcta. Autorizo al prestamista a
 											verificar la
