@@ -29,8 +29,6 @@ jQuery(function($) {
                 if (!regexDUI.test(duiValue)) {
                     $('#dui').addClass('is-invalid');
                     valid = false;
-
-                    
                 } else {
                     $('#dui').removeClass('is-invalid');
                 }

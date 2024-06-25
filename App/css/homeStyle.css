@@ -151,6 +151,9 @@ h5{
 .nav-ocult{
     display: none !important;
 }
+.aling-center{
+    text-align: left;
+}
 @media (max-width:740px ) {
     header{
         display: block !important;
@@ -232,6 +235,9 @@ h5{
     }
     .mart-9{
         margin-top: 19px;
+    }
+    .aling-text-center{
+        text-align: center !important;
     }
 }
 @media only screen and (min-width:740px) and (max-width: 1080px) {
