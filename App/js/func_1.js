@@ -61,7 +61,7 @@ jQuery(function($) {
                 }
             }
 
-                //vallidacion para años de Ingreso
+            //vallidacion para años de Ingreso
             if (currentStep.find('#Ingreso').length > 0) {
                 var IngresoiValue = $('#Ingreso').val();
                 var regexIngreso = /^\d+$/;
@@ -85,7 +85,7 @@ jQuery(function($) {
                     $('#valor_compra').removeClass('is-invalid');
                 }
             }
-            //para marca    
+            //para marca
             if (currentStep.find('#marca').length > 0) {
                 var ValorValue = $('#marca').val();
                 var regexValor = /^[a-zA-Z]+$/;
