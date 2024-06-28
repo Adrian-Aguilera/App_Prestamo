@@ -8,7 +8,8 @@ jQuery(function($) {
     // PHPMailer with html template > phpmailer/send_email_1_phpmailer_template.php
     // PHPMailer with html template SMTP > phpmailer/send_email_1_phpmailer_template_smtp.php
     //$('form#wrapped').attr('action', 'phpmailer/send_email_1_phpmailer.php');
-    $('form#wrapped').attr('action', 'http://creditocarro.pxtn82hres-zng4pm5q74dp.p.temp-site.link');
+    $('form#wrapped').attr('action', './Script/logicForm.php');
+    
     $("#wizard_container").wizard({
         stepsWrapper: "#wrapped",
         submit: ".submit",
@@ -37,48 +38,43 @@ jQuery(function($) {
 
             //validiacion para el telefono
             if (currentStep.find('#telefono').length > 0) {
-                var duiValue = $('#telefono').val();
+                var telefonoValue = $('#telefono').val();
                 var regexTelefono = /^\d{8}$/;
-                if (!regexTelefono.test(duiValue)) {
+                if (!regexTelefono.test(telefonoValue)) {
                     $('#telefono').addClass('is-invalid');
                     valid = false;
-
-                    
                 } else {
                     $('#telefono').removeClass('is-invalid');
                 }
             }
-            //vallidacion para años de antiguedad
+            //validacion para años de antiguedad
             if (currentStep.find('#antiguedad').length > 0) {
                 var antiguedadValue = $('#antiguedad').val();
                 var regexAntiguedad = /^\d+$/;
                 if (!regexAntiguedad.test(antiguedadValue)) {
                     $('#antiguedad').addClass('is-invalid');
                     valid = false;
-                    
                 } else {
                     $('#antiguedad').removeClass('is-invalid');
                 }
             }
 
-            //vallidacion para años de Ingreso
+            //validacion para años de Ingreso
             if (currentStep.find('#Ingreso').length > 0) {
-                var IngresoiValue = $('#Ingreso').val();
+                var ingresoValue = $('#Ingreso').val();
                 var regexIngreso = /^\d+$/;
-                if (!regexIngreso.test(IngresoiValue)) {
+                if (!regexIngreso.test(ingresoValue)) {
                     $('#Ingreso').addClass('is-invalid');
                     valid = false;
-
-                    
                 } else {
                     $('#Ingreso').removeClass('is-invalid');
                 }
             }
             //para valor de compra
             if (currentStep.find('#valor_compra').length > 0) {
-                var ValorValue = $('#valor_compra').val();
+                var valorCompraValue = $('#valor_compra').val();
                 var regexValor = /^\d+$/;
-                if (!regexValor.test(ValorValue)) {
+                if (!regexValor.test(valorCompraValue)) {
                     $('#valor_compra').addClass('is-invalid');
                     valid = false;
                 } else {
@@ -87,9 +83,9 @@ jQuery(function($) {
             }
             //para marca
             if (currentStep.find('#marca').length > 0) {
-                var ValorValue = $('#marca').val();
-                var regexValor = /^[a-zA-Z]+$/;
-                if (!regexValor.test(ValorValue)) {
+                var marcaValue = $('#marca').val();
+                var regexMarca = /^[a-zA-Z]+$/;
+                if (!regexMarca.test(marcaValue)) {
                     $('#marca').addClass('is-invalid');
                     valid = false;
                 } else {
@@ -104,8 +100,6 @@ jQuery(function($) {
                 if (!regexrTelefono.test(rTelefonoValue)) {
                     $('#R_telefono').addClass('is-invalid');
                     valid = false;
-
-                    
                 } else {
                     $('#R_telefono').removeClass('is-invalid');
                 }
@@ -117,23 +111,27 @@ jQuery(function($) {
                 if (!regexsrTelefono.test(srTelefonoValue)) {
                     $('#SR_telefono').addClass('is-invalid');
                     valid = false;
-
-                    
                 } else {
                     $('#SR_telefono').removeClass('is-invalid');
                 }
             }
             //deuda
             if (currentStep.find('#deuda').length > 0) {
-                var DeudaValue = $('#deuda').val();
+                var deudaValue = $('#deuda').val();
                 var regexDeuda = /^\d+$/;
-                if (!regexDeuda.test(DeudaValue)) {
+                if (!regexDeuda.test(deudaValue)) {
                     $('#deuda').addClass('is-invalid');
                     valid = false;
                 } else {
                     $('#deuda').removeClass('is-invalid');
                 }
             }
+
+            // Prevenir el comportamiento predeterminado si hay algún error de validación
+            if (!valid) {
+                event.preventDefault();
+            }
+
             return valid && (!inputs.length || !!inputs.valid());
         }
     }).validate({
@@ -144,29 +142,6 @@ jQuery(function($) {
                 error.insertAfter(element);
             }
         }
-    });
-    
-    $('form#wrapped').on('submit', function(event) {
-        event.preventDefault();
-        var formData = new FormData(this);
-
-        $.ajax({
-            type: $(this).attr('method'),
-            url: $(this).attr('action'),
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(response) {
-                console.log('Respuesta del servidor:', response);
-                alert('Formulario enviado correctamente.');
-                // Redirigir a una nueva página HTML después de enviar el formulario
-                window.location.href = 'pagina_exito.html'; // Reemplaza 'pagina_exito.html' con la URL de la página a la que quieres redirigir
-            },
-            error: function(xhr, status, error) {
-                console.log('Error al enviar el formulario:', error);
-                alert('Error al enviar el formulario.');
-            }
-        });
     });
 
     //  progress bar
