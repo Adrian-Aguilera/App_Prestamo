@@ -30,7 +30,19 @@
 
 	<!-- MODERNIZR MENU -->
 	<script src="js/modernizr.js"></script>
-
+    <style>
+        .container_styled_1 {
+            background: #ffffff !important;
+        }
+        .text{
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            width: 100%;
+            padding-top: 26px;
+            color: #006671;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,10 +58,9 @@
     justify-content: space-between;">
                             <img src="img/message.svg" alt="" class="img-fluid" width="500" height="360">
                         </div>
-                        <p>Solicitud enviada<br> 
-                            exitosamente !!!</p>
+                        <p class="text" style="display: flex; justify-content: center;">Solicitud enviada<br>exitosamente !!!</p>
 						<div style="display: flex; justify-content: space-between;">
-							<button type="submit" class="forward btn-form" onclick="location.href='Form.html'">Ir inició
+							<button type="submit" class="forward btn-form" onclick="location.href='Form.html'" style="background: #00838F !important;">Ir inició
 							</button>
 						</div>
 					</div>
