@@ -145,6 +145,30 @@ jQuery(function($) {
             }
         }
     });
+    
+    $('form#wrapped').on('submit', function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+
+        $.ajax({
+            type: $(this).attr('method'),
+            url: $(this).attr('action'),
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                console.log('Respuesta del servidor:', response);
+                alert('Formulario enviado correctamente.');
+                // Redirigir a una nueva página HTML después de enviar el formulario
+                window.location.href = 'pagina_exito.html'; // Reemplaza 'pagina_exito.html' con la URL de la página a la que quieres redirigir
+            },
+            error: function(xhr, status, error) {
+                console.log('Error al enviar el formulario:', error);
+                alert('Error al enviar el formulario.');
+            }
+        });
+    });
+
     //  progress bar
     $("#progressbar").progressbar({ stepsComplete: 1 });
     $("#wizard_container").wizard({
