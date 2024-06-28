@@ -9,9 +9,9 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 // Puedes realizar alguna verificación en la respuesta si es necesario
-// if ($response) {
+ if ($response) {
 //     // Lógica de verificación aquí
-// }
+ }
 
 header('Location: ../message.html');
 exit;
