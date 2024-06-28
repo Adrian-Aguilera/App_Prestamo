@@ -13,5 +13,5 @@ curl_close($ch);
 //     // Lógica de verificación aquí
 // }
 
-header('Location: tu_archivo.html');
+header('Location: ../message.html');
 exit;
